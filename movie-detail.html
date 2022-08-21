@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./source/css/reset.css">
+    <link rel="stylesheet" href="./source/css/font-awesome.css">
+    <link rel="stylesheet" href="./source/css/style.css">
+</head>
+
+<body>
+    <nav id="navbar" class="navbar-top">
+        <div class="navbar-inner">
+            <div class="navbar-logo image">
+                <a href="index.html">
+                    <img src="./assets/images/logo.png" alt="Movfix">
+                </a>
+            </div>
+            <ul class="navbar-box">
+                <li class="navbar-item parent">
+                    <a href="index.html">Home</a>
+                    <ul class="dropdown">
+                        <li class="dropdown-item"><a href="index.html">Home one</a></li>
+                        <li class="dropdown-item"><a href="#">Home two</a></li>
+                    </ul>
+                </li>
+                <li class="navbar-item parent active">
+                    <a href="#">Movie</a>
+                    <ul class="dropdown">
+                        <li class="dropdown-item"><a href="movie.html">Movie</a></li>
+                        <li class="dropdown-item"><a href="movie-detail.html">Movie details</a></li>
+                    </ul>
+                </li>
+                <li class="navbar-item"><a href="tv-show.html">TV show</a></li>
+                <li class="navbar-item"><a href="pricing.html">Pricing</a></li>
+                <li class="navbar-item parent">
+                    <a href="#">Blog</a>
+                    <ul class="dropdown">
+                        <li class="dropdown-item"><a href="blog.html">Our blog</a></li>
+                        <li class="dropdown-item"><a href="blog-detail.html">Blog details</a></li>
+                    </ul>
+                </li>
+                <li class="navbar-item"><a href="contact.html">Contacts</a></li>
+            </ul>
+            <div class="navbar-action">
+                <div class="search-btn">
+                    <a href="#"><i class="fa fa-search"></i></a>
+                </div>
+                <div class="language-btn">
+                    <a href="#"><i class="fa fa-globe"></i></a>
+                    <select name="language" id="language" title="Select language">
+                        <option value="en" selected>en</option>
+                        <option value="au">au</option>
+                        <option value="ar">ar</option>
+                        <option value="tu">tu</option>
+                    </select>
+                </div>
+                <a href="#" class="btn rounded outline bg-dark medium fw-7 space">
+                    Sign In
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="movie-banner">
+        <div class="movie-banner-box">
+            <div class="image thumb-image">
+                <img class="" src="./assets/images/movies/ucm_poster10.jpg" alt="movie">
+                <a href="https://www.youtube.com/embed/R2gbPxeNk2E" class="play-btn trailer-source">
+                    <img src="./assets/images/play_icon.png" alt="play_icon">
+                </a>
+            </div>
+            <div class="content">
+                <h5 class="sub-title fw-7 hightlight">New Espisodes</h5>
+                <h2 class="title fw-7">
+                    The Easy <span class="hightlight">Reach</span>
+                </h2>
+                <ul class="meta">
+                    <li class="meta-item meta-square bg-light">pg 18</li>
+                    <li class="meta-item meta-outline bg-dark">HD</li>
+                    <li class="meta-item meta-text type">
+                        <a href="#">Romance</a>
+                        <a href="#">Drama</a>
+                    </li>
+                    <li class="meta-item meta-icon date">
+                        <i class="fa fa-calendar"></i>
+                        2021
+                    </li>
+                    <li class="meta-item meta-icon duration">
+                        <i class="fa fa-clock-o"></i>
+                        128 min
+                    </li>
+                </ul>
+                <p class="desc fw-5">Lorem ipsum dolor sit amet, consecetur adipiscing elseddo eiusmod tempor.There are
+                    many variations of passages of lorem Ipsum available, but the majority have suffered alteration in
+                    some injected humour.</p>
+                <div class="action prime-box">
+                    <div class="share fw-5 prime-item">
+                        <i class="fa fa-share-alt title"></i>
+                        <a href="#" class="sub-title">Share</a>
+                    </div>
+                    <div class="prime-item">
+                        <h6 class="fw-7 title">Prime video</h6>
+                        <p class="fw-5 sub-title">Streaming Channels</p>
+                    </div>
+                    <a href="https://www.youtube.com/embed/R2gbPxeNk2E"
+                        class="btn rounded outline prime bg-dark fw-7 trailer-source">
+                        <i class="fa fa-play"></i>
+                        Watch now
+                    </a>
+                </div>
+            </div>
+            <div class="btn-download">
+                <a href="./assets/images/movies/ucm_poster03.jpg" class="btn super bg-accent fw-5 contained image vertical" download="">
+                    Download
+                    <img src="./assets/images/download.svg" alt="download">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="movie-detail">
+        <div class="movie-detail-box">
+            <div class="main-detail-box">
+                <div class="main-detail">
+                    <div class="heading">
+                        <p class="sub-title hightlight">Online streaming</p>
+                        <div class="title-inner">
+                            <h3 class="title small">Watch Full Episode</h3>
+                            <span class="view-counter fw-5">2.7 million</span>
+                            <span class="view-icon hightlight"><i class="fa fa-eye"></i></span>
+                        </div>
+                    </div>
+                    <div class="accordion">
+                        <div class="accordion-header active">
+                            <h6 class="title fw-7">Seasson 2</h6>
+                            <span class="counter">
+                                5 Full Episodes
+                            </span>
+                        </div>
+                        <div class="accordion-wrapper">
+                            <ul class="accordion-inner">
+                                <li class="accordion-item">
+                                    <a href="https://www.youtube.com/embed/R2gbPxeNk2E" class="title fw-6 trailer-source">
+                                        <i class="fa fa-play"></i>
+                                        Episode 1 - The World Is Purple
+                                    </a>
+                                    <span class="time fw-5">
+                                        <i class="fa fa-clock-o hightlight"></i>
+                                        25 Min
+                                    </span>
+                                </li>
+                                <li class="accordion-item">
+                                    <a href="https://www.youtube.com/embed/R2gbPxeNk2E" class="title fw-6 trailer-source">
+                                        <i class="fa fa-play"></i>
+                                        Episode 2 - Meaner Than Evil
+                                    </a>
+                                    <span class="time fw-5">
+                                        <i class="fa fa-clock-o hightlight"></i>
+                                        25 Min
+                                    </span>
+                                </li>
+                                <li class="accordion-item">
+                                    <a href="https://www.youtube.com/embed/R2gbPxeNk2E" class="title fw-6 trailer-source">
+                                        <i class="fa fa-play"></i>
+                                        Episode 3 - I Killed a Man Today
+                                    </a>
+                                    <span class="time fw-5">
+                                        <i class="fa fa-clock-o hightlight"></i>
+                                        25 Min
+                                    </span>
+                                </li>
+                                <li class="accordion-item">
+                                    <a href="https://www.youtube.com/embed/R2gbPxeNk2E" class="title fw-6 trailer-source">
+                                        <i class="fa fa-play"></i>
+                                        Episode 4 - Cowboys and Dreamers
+                                    </a>
+                                    <span class="time fw-5">
+                                        <i class="fa fa-clock-o hightlight"></i>
+                                        25 Min
+                                    </span>
+                                </li>
+                                <li class="accordion-item">
+                                    <a href="https://www.youtube.com/embed/R2gbPxeNk2E" class="title fw-6 trailer-source">
+                                        <i class="fa fa-play"></i>
+                                        Episode 5 - Freight Trains and Monsters
+                                    </a>
+                                    <span class="time fw-5">
+                                        <i class="fa fa-clock-o hightlight"></i>
+                                        25 Min
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="accordion">
+                        <div class="accordion-header">
+                            <h6 class="title fw-7">Seasson 1</h6>
+                            <span class="counter">
+                                5 full Episodes
+                            </span>
+                        </div>
+                        <div class="accordion-wrapper">
+                            <ul class="accordion-inner">
+                                <li class="accordion-item">
+                                    <a href="https://www.youtube.com/embed/R2gbPxeNk2E" class="title fw-6 trailer-source">
+                                        <i class="fa fa-play"></i>
+                                        Episode 1 - the World Is Purple
+                                    </a>
+                                    <span class="time fw-5">
+                                        <i class="fa fa-clock-o hightlight"></i>
+                                        25 Min
+                                    </span>
+                                </li>
+                                <li class="accordion-item">
+                                    <a href="https://www.youtube.com/embed/R2gbPxeNk2E" class="title fw-6 trailer-source">
+                                        <i class="fa fa-play"></i>
+                                        Episode 2 - Meaner Than Evil
+                                    </a>
+                                    <span class="time fw-5">
+                                        <i class="fa fa-clock-o hightlight"></i>
+                                        25 Min
+                                    </span>
+                                </li>
+                                <li class="accordion-item">
+                                    <a href="https://www.youtube.com/embed/R2gbPxeNk2E" class="title fw-6 trailer-source">
+                                        <i class="fa fa-play"></i>
+                                        Episode 3 - I Killed a Man Today
+                                    </a>
+                                    <span class="time fw-5">
+                                        <i class="fa fa-clock-o hightlight"></i>
+                                        25 Min
+                                    </span>
+                                </li>
+                                <li class="accordion-item">
+                                    <a href="https://www.youtube.com/embed/R2gbPxeNk2E" class="title fw-6 trailer-source">
+                                        <i class="fa fa-play"></i>
+                                        Episode 4 - Cowboys and Dreamers
+                                    </a>
+                                    <span class="time fw-5">
+                                        <i class="fa fa-clock-o hightlight"></i>
+                                        25 Min
+                                    </span>
+                                </li>
+                                <li class="accordion-item">
+                                    <a href="https://www.youtube.com/embed/R2gbPxeNk2E" class="title fw-6 trailer-source">
+                                        <i class="fa fa-play"></i>
+                                        Episode 5 - Freight Trains and Monsters
+                                    </a>
+                                    <span class="time fw-5">
+                                        <i class="fa fa-clock-o hightlight"></i>
+                                        25 Min
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-image image">
+                    <img src="./assets/images/movies/ucm_poster02.jpg" alt="Movie Poster">
+                </div>
+            </div>
+            <div class="description-box">
+                <h3 class="title fw-7">
+                    About <span class="hightlight">History</span>
+                </h3>
+                <p class="desc">
+                    Lorem ipsum dolor sit amet, consecetur adipiscing elseddo eiusmod tempor.There are many variations of passages of lorem Ipsum available, but the majority have suffered alteration in some injected humour.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything errassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="best-serie" class="suggestion">
+        <div class="suggestion-box">
+            <div class="heading">
+                <p class="sub-title hightlight center">Best tv series</p>
+            </div>
+            <div class="heading">
+                <h3 class="title center">World Best TV Series</h3>
+            </div>
+            <div class="movie-wrapper">
+                <ul class="movie-box grid-card">
+                    <li class="movie-item card">
+                        <div class="movie-image image rounded">
+                            <a href="movie-detail.html">
+                                <img src="./assets/images/movies/ucm_poster08.jpg" alt="movie">
+                            </a>
+                        </div>
+                        <div class="movie-meta card-meta">
+                            <div class="meta">
+                                <a href="movie-detail.html" class="meta-title">The Perfect Match</a>
+                                <span class="meta-text accent">2021</span>
+                            </div>
+                            <div class="meta">
+                                <div class="meta-outline accent">4k</div>
+                                <div class="meta-icon small">
+                                    <i class="fa fa-clock-o"></i>
+                                    128 min
+                                </div>
+                                <div class="meta-icon small">
+                                    <i class="fa fa-thumbs-up"></i>
+                                    3.5
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="movie-item card">
+                        <div class="movie-image image rounded">
+                            <a href="movie-detail.html">
+                                <img src="./assets/images/movies/ucm_poster07.jpg" alt="movie">
+                            </a>
+                        </div>
+                        <div class="movie-meta card-meta">
+                            <div class="meta">
+                                <a href="movie-detail.html" class="meta-title">The Perfect Match</a>
+                                <span class="meta-text accent">2021</span>
+                            </div>
+                            <div class="meta">
+                                <div class="meta-outline accent">4k</div>
+                                <div class="meta-icon small">
+                                    <i class="fa fa-clock-o"></i>
+                                    128 min
+                                </div>
+                                <div class="meta-icon small">
+                                    <i class="fa fa-thumbs-up"></i>
+                                    3.5
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="movie-item card">
+                        <div class="movie-image image rounded">
+                            <a href="movie-detail.html">
+                                <img src="./assets/images/movies/ucm_poster06.jpg" alt="movie">
+                            </a>
+                        </div>
+                        <div class="movie-meta card-meta">
+                            <div class="meta">
+                                <a href="movie-detail.html" class="meta-title">The Perfect Match</a>
+                                <span class="meta-text accent">2021</span>
+                            </div>
+                            <div class="meta">
+                                <div class="meta-outline accent">4k</div>
+                                <div class="meta-icon small">
+                                    <i class="fa fa-clock-o"></i>
+                                    128 min
+                                </div>
+                                <div class="meta-icon small">
+                                    <i class="fa fa-thumbs-up"></i>
+                                    3.5
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="movie-item card">
+                        <div class="movie-image image rounded">
+                            <a href="movie-detail.html">
+                                <img src="./assets/images/movies/ucm_poster05.jpg" alt="movie">
+                            </a>
+                        </div>
+                        <div class="movie-meta card-meta">
+                            <div class="meta">
+                                <a href="movie-detail.html" class="meta-title">The Perfect Match</a>
+                                <span class="meta-text accent">2021</span>
+                            </div>
+                            <div class="meta">
+                                <div class="meta-outline accent">4k</div>
+                                <div class="meta-icon small">
+                                    <i class="fa fa-clock-o"></i>
+                                    128 min
+                                </div>
+                                <div class="meta-icon small">
+                                    <i class="fa fa-thumbs-up"></i>
+                                    3.5
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="movie-item card">
+                        <div class="movie-image image rounded">
+                            <a href="movie-detail.html">
+                                <img src="./assets/images/movies/ucm_poster04.jpg" alt="movie">
+                            </a>
+                        </div>
+                        <div class="movie-meta card-meta">
+                            <div class="meta">
+                                <a href="movie-detail.html" class="meta-title">The Perfect Match</a>
+                                <span class="meta-text accent">2021</span>
+                            </div>
+                            <div class="meta">
+                                <div class="meta-outline accent">4k</div>
+                                <div class="meta-icon small">
+                                    <i class="fa fa-clock-o"></i>
+                                    128 min
+                                </div>
+                                <div class="meta-icon small">
+                                    <i class="fa fa-thumbs-up"></i>
+                                    3.5
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="movie-item card">
+                        <div class="movie-image image rounded">
+                            <a href="movie-detail.html">
+                                <img src="./assets/images/movies/ucm_poster03.jpg" alt="movie">
+                            </a>
+                        </div>
+                        <div class="movie-meta card-meta">
+                            <div class="meta">
+                                <a href="movie-detail.html" class="meta-title">The Perfect Match</a>
+                                <span class="meta-text accent">2021</span>
+                            </div>
+                            <div class="meta">
+                                <div class="meta-outline accent">4k</div>
+                                <div class="meta-icon small">
+                                    <i class="fa fa-clock-o"></i>
+                                    128 min
+                                </div>
+                                <div class="meta-icon small">
+                                    <i class="fa fa-thumbs-up"></i>
+                                    3.5
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="join-us" class="subcribe">
+        <div class="subcribe-box">
+            <div class="content">
+                <h3 class="fw-7">TRIAL START FIRST 30 DAYS.</h3>
+                <p class="fw-5">Enter your email to create or restart your membership.</p>
+            </div>
+            <form action="" method="POST" class="subcribe-email">
+                <input type="email" name="email" id="email" placeholder="Enter your email" required>
+                <button type="submit" class="btn contained bg-dark accent fw-7 space">Get started</button>
+            </form>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="footer-box">
+            <nav class="footer-navbar">
+                <div class="navbar-logo image">
+                    <img src="./assets/images/logo.png" alt="Movfix">
+                </div>
+                <ul class="navbar-box">
+                    <li class="navbar-item">
+                        <a href="#" class="fw-7">Home</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="#" class="fw-7">Movie</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="#" class="fw-7">Tv show</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="#" class="fw-7">Pages</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="#" class="fw-7">Pricing</a>
+                    </li>
+                </ul>
+                <div class="search-box">
+                    <input type="text" placeholder="Find Favorite Movie">
+                    <a href="#" class="search"><i class="fa fa-search"></i></a>
+                </div>
+            </nav>
+            <div class="footer-info">
+                <ul class="info-box">
+                    <li class="info-item"><a href="#" class="fw-5 hover-text-accent">Faq</a></li>
+                    <li class="info-item"><a href="#" class="fw-5 hover-text-accent">Help center</a></li>
+                    <li class="info-item"><a href="#" class="fw-5 hover-text-accent">Terms of use</a></li>
+                    <li class="info-item"><a href="#" class="fw-5 hover-text-accent">Privacy</a></li>
+                </ul>
+                <ul class="social-box">
+                    <li class="social-item">
+                        <a href="#" class="fw-5">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li class="social-item">
+                        <a href="#" class="fw-5">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li class="social-item">
+                        <a href="#" class="fw-5">
+                            <i class="fa fa-pinterest-p"></i>
+                        </a>
+                    </li>
+                    <li class="social-item">
+                        <a href="#" class="fw-5">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <div class="footer-copyright">
+        <div class="footer-copyright-box">
+            <div class="copyright fw-5">
+                Copyright © 2021. All Rights Reserved By <a href="index.html" class="hightlight">Movflx</a>
+            </div>
+            <div class="image">
+                <img src="./assets/images/card_img.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <section class="trailer-wrapper">
+        <iframe class="video" width="967" height="544" src="" frameborder="0" allow="autoplay; encrypted-media;"
+            allowfullscreen></iframe>
+    </section>
+
+    <section id="search">
+        <form action="" method="GET" class="search-box">
+            <input type="text" name="search-top" id="search-top" placeholder="Search here...">
+            <label for="search-top"><i class="fa fa-search"></i></label>
+        </form>
+    </section>
+
+    <div id="to-top-btn">
+        <button type="button"> > </button>
+    </div>
+
+    <script src="./source/js/main.js"></script>
+</body>
+
+</html>

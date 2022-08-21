@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./source/css/reset.css">
+    <link rel="stylesheet" href="./source/css/font-awesome.css">
+    <link rel="stylesheet" href="./source/css/style.css">
+</head>
+
+<body>
+    <nav id="navbar" class="navbar-top">
+        <div class="navbar-inner">
+            <div class="navbar-logo image">
+                <a href="index.html">
+                    <img src="./assets/images/logo.png" alt="Movfix">
+                </a>
+            </div>
+            <ul class="navbar-box">
+                <li class="navbar-item parent">
+                    <a href="index.html">Home</a>
+                    <ul class="dropdown">
+                        <li class="dropdown-item"><a href="index.html">Home one</a></li>
+                        <li class="dropdown-item"><a href="#">Home two</a></li>
+                    </ul>
+                </li>
+                <li class="navbar-item parent">
+                    <a href="#">Movie</a>
+                    <ul class="dropdown">
+                        <li class="dropdown-item"><a href="movie.html">Movie</a></li>
+                        <li class="dropdown-item"><a href="movie-detail.html">Movie details</a></li>
+                    </ul>
+                </li>
+                <li class="navbar-item"><a href="tv-show.html">TV show</a></li>
+                <li class="navbar-item"><a href="pricing.html">Pricing</a></li>
+                <li class="navbar-item parent">
+                    <a href="#">Blog</a>
+                    <ul class="dropdown">
+                        <li class="dropdown-item"><a href="blog.html">Our blog</a></li>
+                        <li class="dropdown-item"><a href="blog-detail.html">Blog details</a></li>
+                    </ul>
+                </li>
+                <li class="navbar-item active"><a href="contact.html">Contacts</a></li>
+            </ul>
+            <div class="navbar-action">
+                <div class="search-btn">
+                    <a href="#"><i class="fa fa-search"></i></a>
+                </div>
+                <div class="language-btn">
+                    <a href="#"><i class="fa fa-globe"></i></a>
+                    <select name="language" id="language" title="Select language">
+                        <option value="en" selected>en</option>
+                        <option value="au">au</option>
+                        <option value="ar">ar</option>
+                        <option value="tu">tu</option>
+                    </select>
+                </div>
+                <a href="#" class="btn rounded outline bg-dark medium fw-7 space">
+                    Sign In
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="breadcrumb">
+        <h2 class="title fw-7">
+            Contact Us
+        </h2>
+        <ul class="breadcumb-box">
+            <li class="breadcumb-item">
+                <a href="index.html" class="fw-6">Home</a>
+            </li>
+            <li class="breadcumb-item disable">
+                <a href="#" class="fw-6">Contact</a>
+            </li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <div class="contact-box">
+            <div class="group-input">
+                <h4 class="title-decoration fw-6">Contact Form</h4>
+                <form method="POST" action="" class="group-input-box">
+                    <div class="group-input-inner">
+                        <input type="text" name="name" id="name" placeholder="Your name *" required>
+                        <input type="email" name="email" id="email" placeholder="Your email *" required>
+                    </div>
+                    <input type="text" name="subject" id="subject" placeholder="Subjec *" required>
+                    <textarea name="message" id="message" placeholder="Type your message..." required></textarea>
+                    <button type="submit" class="btn rounded outline bg-dark fw-7 large">Send Message</button>
+                </form>
+            </div>
+            <div class="contact-info">
+                <h4 class="title-decoration fw-6">Infomation</h4>
+                <div class="card-info">
+                    <div class="card-info-header bold">
+                        Find solutions :
+                        <span class="fw-5">to common problems, or get help from a support agent industry's standard
+                            .</span>
+                    </div>
+                    <ul class="card-info-body">
+                        <li class="info-item">
+                            <span class="icon"><i class="fa fa-map-marker"></i></span>
+                            <div class="infor-inner bold">
+                                Address : 
+                                <span class="fw-5">W38 Park Road New York</span>
+                            </div>
+                        </li>
+                        <li class="info-item">
+                            <span class="icon"><i class="fa fa-phone"></i></span>
+                            <div class="infor-inner bold">
+                                Phone  : 
+                                <span class="fw-5"> (09) 123 854 365</span>
+                            </div>
+                        </li>
+                        <li class="info-item">
+                            <span class="icon"><i class="fa fa-envelope"></i></span>
+                            <div class="infor-inner bold">
+                                Email :
+                                <span class="fw-5">support@movflx.com</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="map">
+    </section>
+
+    <section id="join-us" class="subcribe">
+        <div class="subcribe-box">
+            <div class="content">
+                <h3 class="fw-7">TRIAL START FIRST 30 DAYS.</h3>
+                <p class="fw-5">Enter your email to create or restart your membership.</p>
+            </div>
+            <form action="" method="POST" class="subcribe-email">
+                <input type="email" name="email" id="email" placeholder="Enter your email" required>
+                <button type="submit" class="btn contained bg-dark accent fw-7 space">Get started</button>
+            </form>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="footer-box">
+            <nav class="footer-navbar">
+                <div class="navbar-logo image">
+                    <img src="./assets/images/logo.png" alt="Movfix">
+                </div>
+                <ul class="navbar-box">
+                    <li class="navbar-item">
+                        <a href="#" class="fw-7">Home</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="#" class="fw-7">Movie</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="#" class="fw-7">Tv show</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="#" class="fw-7">Pages</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="#" class="fw-7">Pricing</a>
+                    </li>
+                </ul>
+                <div class="search-box">
+                    <input type="text" placeholder="Find Favorite Movie">
+                    <a href="#" class="search"><i class="fa fa-search"></i></a>
+                </div>
+            </nav>
+            <div class="footer-info">
+                <ul class="info-box">
+                    <li class="info-item"><a href="#" class="fw-5 hover-text-accent">Faq</a></li>
+                    <li class="info-item"><a href="#" class="fw-5 hover-text-accent">Help center</a></li>
+                    <li class="info-item"><a href="#" class="fw-5 hover-text-accent">Terms of use</a></li>
+                    <li class="info-item"><a href="#" class="fw-5 hover-text-accent">Privacy</a></li>
+                </ul>
+                <ul class="social-box">
+                    <li class="social-item">
+                        <a href="#" class="fw-5">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li class="social-item">
+                        <a href="#" class="fw-5">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li class="social-item">
+                        <a href="#" class="fw-5">
+                            <i class="fa fa-pinterest-p"></i>
+                        </a>
+                    </li>
+                    <li class="social-item">
+                        <a href="#" class="fw-5">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <div class="footer-copyright">
+        <div class="footer-copyright-box">
+            <div class="copyright fw-5">
+                Copyright © 2021. All Rights Reserved By <a href="index.html" class="hightlight">Movflx</a>
+            </div>
+            <div class="image">
+                <img src="./assets/images/card_img.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <section id="search">
+        <form action="" method="GET" class="search-box">
+            <input type="text" name="search-top" id="search-top" placeholder="Search here...">
+            <label for="search-top"><i class="fa fa-search"></i></label>
+        </form>
+    </section>
+
+    <div id="to-top-btn">
+        <button type="button"> > </button>
+    </div>
+    
+    <script src="./source/js/main.js"></script>
+</body>
+
+</html>

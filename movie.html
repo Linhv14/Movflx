@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./source/css/reset.css">
+    <link rel="stylesheet" href="./source/css/font-awesome.css">
+    <link rel="stylesheet" href="./source/css/style.css">
+</head>
+
+<body>
+    <nav id="navbar" class="navbar-top">
+        <div class="navbar-inner">
+            <div class="navbar-logo image">
+                <a href="index.html">
+                    <img src="./assets/images/logo.png" alt="Movfix">
+                </a>
+            </div>
+            <ul class="navbar-box">
+                <li class="navbar-item parent">
+                    <a href="index.html">Home</a>
+                    <ul class="dropdown">
+                        <li class="dropdown-item"><a href="index.html">Home one</a></li>
+                        <li class="dropdown-item"><a href="#">Home two</a></li>
+                    </ul>
+                </li>
+                <li class="navbar-item parent">
+                    <a href="#">Movie</a>
+                    <ul class="dropdown">
+                        <li class="dropdown-item active"><a href="movie.html">Movie</a></li>
+                        <li class="dropdown-item"><a href="movie-detail.html">Movie details</a></li>
+                    </ul>
+                </li>
+                <li class="navbar-item"><a href="tv-show.html">TV show</a></li>
+                <li class="navbar-item"><a href="pricing.html">Pricing</a></li>
+                <li class="navbar-item parent">
+                    <a href="#">Blog</a>
+                    <ul class="dropdown">
+                        <li class="dropdown-item"><a href="blog.html">Our blog</a></li>
+                        <li class="dropdown-item"><a href="blog-detail.html">Blog details</a></li>
+                    </ul>
+                </li>
+                <li class="navbar-item"><a href="contact.html">Contacts</a></li>
+            </ul>
+            <div class="navbar-action">
+                <div class="search-btn">
+                    <a href="#"><i class="fa fa-search"></i></a>
+                </div>
+                <div class="language-btn">
+                    <a href="#"><i class="fa fa-globe"></i></a>
+                    <select name="language" id="language" title="Select language">
+                        <option value="en" selected>en</option>
+                        <option value="au">au</option>
+                        <option value="ar">ar</option>
+                        <option value="tu">tu</option>
+                    </select>
+                </div>
+                <a href="#" class="btn rounded outline bg-dark medium fw-7 space">
+                    Sign In
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="breadcrumb">
+        <h2 class="title fw-7">
+            Our <span class="hightlight">Movie</span>
+        </h2>
+        <ul class="breadcumb-box">
+            <li class="breadcumb-item">
+                <a href="index.html" class="fw-6">Home</a>
+            </li>
+            <li class="breadcumb-item disable">
+                <a href="#" class="fw-6">Movie</a>
+            </li>
+        </ul>
+    </section>
+
+    <section id="new-release" class="suggestion">
+        <div class="suggestion-box">
+            <div class="heading">
+                <p class="sub-title hightlight">Online streaming</p>
+            </div>
+            <div class="heading control">
+                <h3 class="title">New Release Movies</h3>
+                <ul class="control-action">
+                    <li class="action-item active">
+                        <a href="#" class="btn fw-6 rounded outline-dark small bg-gray lowercase">Animation</a>
+                    </li>
+                    <li class="action-item">
+                        <a href="#" class="btn fw-6 rounded outline-dark small bg-gray lowercase">Movies</a>
+                    </li>
+                    <li class="action-item">
+                        <a href="#" class="btn fw-6 rounded outline-dark small bg-gray lowercase">Romantic</a>
+                    </li>
+                    <li class="action-item">
+                        <select name="type-movie" title="Choose type movie"
+                            class="btn fw-6 dropdownable rounded outline-dark small bg-gray lowercase">
+                            <option value="english" selected>English</option>
+                            <option value="english">Blueray</option>
+                            <option value="english">4k movie</option>
+                            <option value="english">Hd movie</option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+            <div class="movie-wrapper">
+                <ul class="movie-box grid-layout grid-card">
+                    <li class="movie-item card hoverable">
+                        <div class="movie-image image rounded">
+                            <a href="movie-detail.html">
+                                <img src="./assets/images/movies/ucm_poster01.jpg" alt="movie">
+                            </a>
+                            <ul class="hover-box">
+                                <li class="hover-item star-box">
+                                    <span class="star rated">
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                    <span class="star rated">
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                    <span class="star rated">
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                    <span class="star rated">
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                    <span class="star">
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                </li>
+                                <li class="hover-item">
+                                    <a href="https://www.youtube.com/embed/R2gbPxeNk2E" class="btn rounded outline  fw-6 medium bg-accent hover-accent trailer-source">
+                                        Watch now
+                                    </a>
+                                </li>
+                                <li class="hover-item">
+                                    <a href="movie-detail.html" class="btn rounded outline fw-6 medium bg-dark">
+                                        Details
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="movie-meta card-meta">
+                            <div class="meta">
+                                <a href="movie-detail.html" class="meta-title">The Perfect Match</a>
+                                <span class="meta-text accent">2021</span>
+                            </div>
+                            <div class="meta">
+                                <div class="meta-outline accent">4k</div>
+                                <div class="meta-icon small">
+                                    <i class="fa fa-clock-o"></i>
+                                    128 min
+                                </div>
+                                <div class="meta-icon small">
+                                    <i class="fa fa-thumbs-up"></i>
+                                    3.5
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="movie-item card hoverable">
+                        <div class="movie-image image rounded">
+                            <a href="movie-detail.html">
+                                <img src="./assets/images/movies/ucm_poster02.jpg" alt="movie">
+                            </a>
+                            <ul class="hover-box">
+                                <li class="hover-item star-box">
+                                    <span class="star rated">
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                    <span class="star rated">
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                    <span class="star rated">
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                    <span class="star rated">
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                    <span class="star">
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                </li>
+                                <li class="hover-item">
+                                    <a href="https://www.youtube.com/embed/R2gbPxeNk2E" class="btn rounded outline  fw-6 medium bg-accent hover-accent trailer-source">
+                                        Watch now
+                                    </a>
+                                </li>
+                                <li class="hover-item">
+                                    <a href="movie-detail.html" class="btn rounded outline fw-6 medium bg-dark">
+                                        Details
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="movie-meta card-meta">
+                            <div class="meta">
+                                <a href="movie-detail.html" class="meta-title">The Perfect Match</a>
+                                <span class="meta-text accent">2021</span>
+                            </div>
+                            <div class="meta">
+                                <div class="meta-outline accent">4k</div>
+                                <div class="meta-icon small">
+                                    <i class="fa fa-clock-o"></i>
+                                    128 min
+                                </div>
+                                <div class="meta-icon small">
+                                    <i class="fa fa-thumbs-up"></i>
+                                    3.5
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="movie-item card hoverable">
+                        <div class="movie-image image rounded">
+                            <a href="movie-detail.html">
+                                <img src="./assets/images/movies/ucm_poster03.jpg" alt="movie">
+                            </a>
+                            <ul class="hover-box">
+                                <li class="hover-item star-box">
+                                    <span class="star rated">
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                    <span class="star rated">
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                    <span class="star rated">
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                    <span class="star rated">
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                    <span class="star">
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                </li>
+                                <li class="hover-item">
+                                    <a href="https://www.youtube.com/embed/R2gbPxeNk2E" class="btn rounded outline  fw-6 medium bg-accent hover-accent trailer-source">
+                                        Watch now
+                                    </a>
+                                </li>
+                                <li class="hover-item">
+                                    <a href="movie-detail.html" class="btn rounded outline fw-6 medium bg-dark">
+                                        Details
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="movie-meta card-meta">
+                            <div class="meta">
+                                <a href="movie-detail.html" class="meta-title">The Perfect Match</a>
+                                <span class="meta-text accent">2021</span>
+                            </div>
+                            <div class="meta">
+                                <div class="meta-outline accent">4k</div>
+                                <div class="meta-icon small">
+                                    <i class="fa fa-clock-o"></i>
+                                    128 min
+                                </div>
+                                <div class="meta-icon small">
+                                    <i class="fa fa-thumbs-up"></i>
+                                    3.5
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="movie-item card hoverable">
+                        <div class="movie-image image rounded">
+                            <a href="movie-detail.html">
+                                <img src="./assets/images/movies/ucm_poster04.jpg" alt="movie">
+                            </a>
+                            <ul class="hover-box">
+                                <li class="hover-item star-box">
+                                    <span class="star rated">
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                    <span class="star rated">
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                    <span class="star rated">
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                    <span class="star rated">
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                    <span class="star">
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                </li>
+                                <li class="hover-item">
+                                    <a href="https://www.youtube.com/embed/R2gbPxeNk2E" class="btn rounded outline  fw-6 medium bg-accent hover-accent trailer-source">
+                                        Watch now
+                                    </a>
+                                </li>
+                                <li class="hover-item">
+                                    <a href="movie-detail.html" class="btn rounded outline fw-6 medium bg-dark">
+                                        Details
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="movie-meta card-meta">
+                            <div class="meta">
+                                <a href="movie-detail.html" class="meta-title">The Perfect Match</a>
+                                <span class="meta-text accent">2021</span>
+                            </div>
+                            <div class="meta">
+                                <div class="meta-outline accent">4k</div>
+                                <div class="meta-icon small">
+                                    <i class="fa fa-clock-o"></i>
+                                    128 min
+                                </div>
+                                <div class="meta-icon small">
+                                    <i class="fa fa-thumbs-up"></i>
+                                    3.5
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="movie-item card hoverable">
+                        <div class="movie-image image rounded">
+                            <a href="movie-detail.html">
+                                <img src="./assets/images/movies/ucm_poster05.jpg" alt="movie">
+                            </a>
+                            <ul class="hover-box">
+                                <li class="hover-item star-box">
+                                    <span class="star rated">
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                    <span class="star rated">
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                    <span class="star rated">
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                    <span class="star rated">
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                    <span class="star">
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                </li>
+                                <li class="hover-item">
+                                    <a href="https://www.youtube.com/embed/R2gbPxeNk2E" class="btn rounded outline  fw-6 medium bg-accent hover-accent trailer-source">
+                                        Watch now
+                                    </a>
+                                </li>
+                                <li class="hover-item">
+                                    <a href="movie-detail.html" class="btn rounded outline fw-6 medium bg-dark">
+                                        Details
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="movie-meta card-meta">
+                            <div class="meta">
+                                <a href="movie-detail.html" class="meta-title">The Perfect Match</a>
+                                <span class="meta-text accent">2021</span>
+                            </div>
+                            <div class="meta">
+                                <div class="meta-outline accent">4k</div>
+                                <div class="meta-icon small">
+                                    <i class="fa fa-clock-o"></i>
+                                    128 min
+                                </div>
+                                <div class="meta-icon small">
+                                    <i class="fa fa-thumbs-up"></i>
+                                    3.5
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="movie-item card hoverable">
+                        <div class="movie-image image rounded">
+                            <a href="movie-detail.html">
+                                <img src="./assets/images/movies/ucm_poster06.jpg" alt="movie">
+                            </a>
+                            <ul class="hover-box">
+                                <li class="hover-item star-box">
+                                    <span class="star rated">
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                    <span class="star rated">
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                    <span class="star rated">
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                    <span class="star rated">
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                    <span class="star">
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                </li>
+                                <li class="hover-item">
+                                    <a href="https://www.youtube.com/embed/R2gbPxeNk2E" class="btn rounded outline  fw-6 medium bg-accent hover-accent trailer-source">
+                                        Watch now
+                                    </a>
+                                </li>
+                                <li class="hover-item">
+                                    <a href="movie-detail.html" class="btn rounded outline fw-6 medium bg-dark">
+                                        Details
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="movie-meta card-meta">
+                            <div class="meta">
+                                <a href="movie-detail.html" class="meta-title">The Perfect Match</a>
+                                <span class="meta-text accent">2021</span>
+                            </div>
+                            <div class="meta">
+                                <div class="meta-outline accent">4k</div>
+                                <div class="meta-icon small">
+                                    <i class="fa fa-clock-o"></i>
+                                    128 min
+                                </div>
+                                <div class="meta-icon small">
+                                    <i class="fa fa-thumbs-up"></i>
+                                    3.5
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="movie-item card hoverable">
+                        <div class="movie-image image rounded">
+                            <a href="movie-detail.html">
+                                <img src="./assets/images/movies/ucm_poster07.jpg" alt="movie">
+                            </a>
+                            <ul class="hover-box">
+                                <li class="hover-item star-box">
+                                    <span class="star rated">
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                    <span class="star rated">
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                    <span class="star rated">
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                    <span class="star rated">
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                    <span class="star">
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                </li>
+                                <li class="hover-item">
+                                    <a href="https://www.youtube.com/embed/R2gbPxeNk2E" class="btn rounded outline  fw-6 medium bg-accent hover-accent trailer-source">
+                                        Watch now
+                                    </a>
+                                </li>
+                                <li class="hover-item">
+                                    <a href="movie-detail.html" class="btn rounded outline fw-6 medium bg-dark">
+                                        Details
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="movie-meta card-meta">
+                            <div class="meta">
+                                <a href="movie-detail.html" class="meta-title">The Perfect Match</a>
+                                <span class="meta-text accent">2021</span>
+                            </div>
+                            <div class="meta">
+                                <div class="meta-outline accent">4k</div>
+                                <div class="meta-icon small">
+                                    <i class="fa fa-clock-o"></i>
+                                    128 min
+                                </div>
+                                <div class="meta-icon small">
+                                    <i class="fa fa-thumbs-up"></i>
+                                    3.5
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="movie-item card hoverable">
+                        <div class="movie-image image rounded">
+                            <a href="movie-detail.html">
+                                <img src="./assets/images/movies/ucm_poster08.jpg" alt="movie">
+                            </a>
+                            <ul class="hover-box">
+                                <li class="hover-item star-box">
+                                    <span class="star rated">
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                    <span class="star rated">
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                    <span class="star rated">
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                    <span class="star rated">
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                    <span class="star">
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                </li>
+                                <li class="hover-item">
+                                    <a href="https://www.youtube.com/embed/R2gbPxeNk2E" class="btn rounded outline  fw-6 medium bg-accent hover-accent trailer-source">
+                                        Watch now
+                                    </a>
+                                </li>
+                                <li class="hover-item">
+                                    <a href="movie-detail.html" class="btn rounded outline fw-6 medium bg-dark">
+                                        Details
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="movie-meta card-meta">
+                            <div class="meta">
+                                <a href="movie-detail.html" class="meta-title">The Perfect Match</a>
+                                <span class="meta-text accent">2021</span>
+                            </div>
+                            <div class="meta">
+                                <div class="meta-outline accent">4k</div>
+                                <div class="meta-icon small">
+                                    <i class="fa fa-clock-o"></i>
+                                    128 min
+                                </div>
+                                <div class="meta-icon small">
+                                    <i class="fa fa-thumbs-up"></i>
+                                    3.5
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <ul class="pagination">
+                <li class="pagination-item active">
+                    <a href="#" class="fw-6">1</a>
+                </li>
+                <li class="pagination-item">
+                    <a href="#" class="fw-6">2</a>
+                </li>
+                <li class="pagination-item">
+                    <a href="#" class="fw-6">3</a>
+                </li>
+                <li class="pagination-item">
+                    <a href="#" class="fw-6">4</a>
+                </li>
+                <li class="pagination-item">
+                    <a href="#" class="fw-6">Next</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="join-us" class="subcribe">
+        <div class="subcribe-box">
+            <div class="content">
+                <h3 class="fw-7">TRIAL START FIRST 30 DAYS.</h3>
+                <p class="fw-5">Enter your email to create or restart your membership.</p>
+            </div>
+            <form action="" method="POST" class="subcribe-email">
+                <input type="email" name="email" id="email" placeholder="Enter your email" required>
+                <button type="submit" class="btn contained bg-dark accent fw-7 space">Get started</button>
+            </form>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="footer-box">
+            <nav class="footer-navbar">
+                <div class="navbar-logo image">
+                    <img src="./assets/images/logo.png" alt="Movfix">
+                </div>
+                <ul class="navbar-box">
+                    <li class="navbar-item">
+                        <a href="#" class="fw-7">Home</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="#" class="fw-7">Movie</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="#" class="fw-7">Tv show</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="#" class="fw-7">Pages</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="#" class="fw-7">Pricing</a>
+                    </li>
+                </ul>
+                <div class="search-box">
+                    <input type="text" placeholder="Find Favorite Movie">
+                    <a href="#" class="search"><i class="fa fa-search"></i></a>
+                </div>
+            </nav>
+            <div class="footer-info">
+                <ul class="info-box">
+                    <li class="info-item"><a href="#" class="fw-5 hover-text-accent">Faq</a></li>
+                    <li class="info-item"><a href="#" class="fw-5 hover-text-accent">Help center</a></li>
+                    <li class="info-item"><a href="#" class="fw-5 hover-text-accent">Terms of use</a></li>
+                    <li class="info-item"><a href="#" class="fw-5 hover-text-accent">Privacy</a></li>
+                </ul>
+                <ul class="social-box">
+                    <li class="social-item">
+                        <a href="#" class="fw-5">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li class="social-item">
+                        <a href="#" class="fw-5">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li class="social-item">
+                        <a href="#" class="fw-5">
+                            <i class="fa fa-pinterest-p"></i>
+                        </a>
+                    </li>
+                    <li class="social-item">
+                        <a href="#" class="fw-5">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <div class="footer-copyright">
+        <div class="footer-copyright-box">
+            <div class="copyright fw-5">
+                Copyright © 2021. All Rights Reserved By <a href="index.html" class="hightlight">Movflx</a>
+            </div>
+            <div class="image">
+                <img src="./assets/images/card_img.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <section id="search">
+        <form action="" method="GET" class="search-box">
+            <input type="text" name="search-top" id="search-top" placeholder="Search here...">
+            <label for="search-top"><i class="fa fa-search"></i></label>
+        </form>
+    </section>
+
+    <section class="trailer-wrapper">
+        <iframe class="video" width="967" height="544" src=""
+            frameborder="0" allow="autoplay; encrypted-media;" allowfullscreen></iframe>
+    </section>
+
+    <div id="to-top-btn">
+        <button type="button"> > </button>
+    </div>
+    
+    <script src="./source/js/main.js"></script>
+</body>
+
+</html>

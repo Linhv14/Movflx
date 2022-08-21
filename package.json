@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "sass": "^1.54.4"
+  },
+  "name": "movflx",
+  "version": "1.0.0",
+  "description": "Final project about HTML CSS",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass source/sass/style.scss source/css/style.css --watch"
+  },
+  "keywords": [
+    "HTML",
+    "CSS",
+    "SCSS"
+  ],
+  "author": "Linhv14",
+  "license": "ISC"
+}
