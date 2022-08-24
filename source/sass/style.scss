@@ -6,10 +6,9 @@
     position: absolute;
     z-index: 9997;
     inset: 0 0 auto;
-    height: 90px;
+    height: $navbar-height;
     padding: 20px 0;
     background-color: transparent;
-    transition: height 0.25s ease;
     box-sizing: content-box;
 
     &.scroll-down {
@@ -19,8 +18,7 @@
         transform: translateY(-100%);
         padding: 0;
         background-color: $bg-dark;
-        transition: all 0.25s;
-        animation: navbar-fade-down 0.45s linear forwards;
+        animation: navbar-fade-down 0.55s linear forwards;
     }
 
     .navbar-inner {
@@ -1429,7 +1427,7 @@
     overflow: hidden;
     box-shadow: $float-btn-shadow;
     opacity: 0;
-    transition: all 0.5s ease;
+    transition: all 0.75s ease;
 
     &.show {
         opacity: 1;

@@ -93,6 +93,10 @@ select {
   outline: 0;
 }
 
+textarea {
+  resize: vertical;
+}
+
 .btn {
   font-size: 12px;
   text-align: center;
@@ -1004,7 +1008,6 @@ p.desc.dark {
   height: 90px;
   padding: 20px 0;
   background-color: transparent;
-  transition: height 0.25s ease;
   box-sizing: content-box;
 }
 #navbar.scroll-down {
@@ -1014,8 +1017,7 @@ p.desc.dark {
   transform: translateY(-100%);
   padding: 0;
   background-color: #171d22;
-  transition: all 0.25s;
-  animation: navbar-fade-down 0.45s linear forwards;
+  animation: navbar-fade-down 0.55s linear forwards;
 }
 #navbar .navbar-inner {
   height: 100%;
@@ -2272,7 +2274,7 @@ p.desc.dark {
   overflow: hidden;
   box-shadow: 0px 0px 4px 0px rgba(30, 30, 30, 0.17);
   opacity: 0;
-  transition: all 0.5s ease;
+  transition: all 0.75s ease;
 }
 #to-top-btn.show {
   opacity: 1;
