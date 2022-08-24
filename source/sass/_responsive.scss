@@ -1,0 +1,73 @@
+
+@use "mixins";
+@import "variables.scss";
+
+// Responsive
+$mobile-screen: 576px;
+$tablet-screen: 768px;
+$desktop-screen: 992px;
+$large-sceen: 1220px;
+
+@mixin mobile-screen() {
+    @media (max-width: #{$tablet-screen - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet-screen() {
+    @media (min-width: #{$tablet-screen}) and (max-width: #{$desktop-screen - 1px}) {
+        @content;
+    }
+}
+
+@mixin desktop-screen() {
+    @media (min-width: #{$desktop-screen}) and (max-width: #{$large-sceen - 1px}) {
+        @content;
+    }
+}
+
+@mixin large-screen() {
+    @media (min-width: #{$large-sceen}) {
+        @content;
+    }
+}
+
+@mixin resize-layout() {
+    @include mobile-screen() {
+        @include mixins.set-layout(540px);
+    };
+    @include tablet-screen() {
+        @include mixins.set-layout(720px);
+    };
+    @include desktop-screen() {
+        @include mixins.set-layout(960px);
+    };
+    @include large-screen() {
+        @include mixins.set-layout(1330px);
+    };
+}
+
+@mixin resize-grid($width) {
+    @include mobile-screen() {
+        #{$width}: width-flex-item(1, 0px)
+    };
+    @include tablet-screen() {
+        #{$width}: width-flex-item(2, 30px)
+    };
+    @include desktop-screen() {
+        #{$width}: width-flex-item(3, 30px)
+    };
+    @include large-screen() {
+        #{$width}: width-flex-item(4, 30px)    
+    };
+}
+
+@function width-flex-item($col, $gap) {
+    $result: calc(100%/$col - (($col - 1)*$gap)/$col);
+    @return $result;
+}
+
+@function width-flex-percent($col, $total, $gap: 0px, $total-col: 1) {
+    $result: calc(100%*$col/$total - $gap/$total-col);
+    @return $result;
+}

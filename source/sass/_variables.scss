@@ -3,17 +3,14 @@
 $width-section: 1330px;
 $width-section-large: 1420px;
 
-$movie-col: 4;
-$movie-gap: 30px;
-$movie-width: calc(100%/$movie-col - (($movie-col - 1)*$movie-gap)/$movie-col);
-
+// Animation in Live-Movie Section
 $item-count-up: 3;
 $item-count-down: 10;
 $duration-counter: 1.5s;
+// --- End
 
-$navbar-height: 90px;
-$navbar-padding: 0 65px;
-$padding-content: 120px 110px;
+$movie-col: 4;
+$movie-gap: 30px;
 
 $accent: #e4d804;
 

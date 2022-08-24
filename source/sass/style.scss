@@ -1,12 +1,14 @@
 @use "mixins.scss";
 @import "variables.scss";
 @import "animation.scss";
+@import "component.scss";
+@import "responsive.scss";
 
 #navbar {
     position: absolute;
     z-index: 9997;
     inset: 0 0 auto;
-    height: $navbar-height;
+    height: 90px;
     padding: 20px 0;
     background-color: transparent;
     box-sizing: content-box;
@@ -23,7 +25,7 @@
 
     .navbar-inner {
         height: 100%;
-        @include mixins.set-layout($width-section-large);
+        @include resize-layout();
         @include mixins.flex-vertical;
 
         .navbar-box {
@@ -161,7 +163,7 @@
     padding: 295px 0 273px 0;
 
     .banner-box {
-        @include mixins.set-layout($width-section-large);
+        @include resize-layout();
 
         &>* {
             opacity: 0;
@@ -354,10 +356,10 @@
     .blog-box {
         display: flex;
         gap: 60px;
-        @include mixins.set-layout($width-section);
+        @include resize-layout();
 
         .blog-box-inner {
-            width: mixins.width-flex-percent(2, 3, 60px, 2);
+            width: width-flex-percent(2, 3, 60px, 2);
 
             .list-blog {
                 .blog-item {
@@ -434,7 +436,7 @@
         }
 
         .blog-option {
-            width: mixins.width-flex-percent(1, 3, 60px, 2);
+            width: width-flex-percent(1, 3, 60px, 2);
         }
     }
 }
@@ -446,10 +448,10 @@
     .blog-box {
         display: flex;
         gap: 60px;
-        @include mixins.set-layout($width-section);
+        @include resize-layout();
 
         .blog-box-inner {
-            width: mixins.width-flex-percent(2, 3, 60px, 2);
+            width: width-flex-percent(2, 3, 60px, 2);
 
             .blog-item {
                 margin-bottom: 50px;
@@ -597,7 +599,7 @@
         }
 
         .blog-option {
-            width: mixins.width-flex-percent(1, 3, 60px, 2);
+            width: width-flex-percent(1, 3, 60px, 2);
         }
     }
 }
@@ -622,7 +624,7 @@
             .main-detail {
                 margin-right: 20px;
                 padding: 0 15px;
-                width: mixins.width-flex-percent(2, 3);
+                width: width-flex-percent(2, 3);
 
                 .heading .title-inner {
                     @include mixins.flex-vertical;
@@ -643,7 +645,7 @@
 
             .main-image {
                 padding: 0 15px;
-                width: mixins.width-flex-percent(1, 3);
+                width: width-flex-percent(1, 3);
             }
         }
     }
@@ -679,7 +681,7 @@
     }
 
     .pricing-box {
-        @include mixins.set-layout($width-section);
+        @include resize-layout();
 
         .pricing-image {
             margin: 30px 0 70px;
@@ -696,7 +698,7 @@
                 margin-bottom: 30px;
                 @include mixins.flex-vertical;
                 flex-direction: column;
-                width: mixins.width-flex-item(3, 30px);
+                width: width-flex-item(3, 30px);
                 background-color: $pricing-card;
                 border: 2px solid $pricing-card;
                 border-radius: 4px;
@@ -777,7 +779,7 @@
     padding: 120px 0;
 
     .contact-box {
-        @include mixins.set-layout($width-section);
+        @include resize-layout();
         display: flex;
         gap: 30px;
 
@@ -789,7 +791,7 @@
         }
 
         .group-input {
-            min-width: mixins.width-flex-percent(2, 3, 30px);
+            min-width: width-flex-percent(2, 3, 30px);
 
             .btn {
                 margin-top: 36px;
@@ -797,7 +799,7 @@
         }
 
         .contact-info {
-            min-width: mixins.width-flex-percent(1, 3, 30px);
+            min-width: width-flex-percent(1, 3, 30px);
 
             .card-info {
                 padding: 40px 34px 60px;
@@ -856,7 +858,7 @@
     }
 
     .service-box {
-        @include mixins.set-layout($width-section);
+        @include resize-layout();
         display: flex;
         align-items: stretch;
         overflow: hidden;
@@ -961,10 +963,8 @@
         size: cover;
     }
 
-    ;
-
     .top-rated-box {
-        @include mixins.set-layout($width-section);
+        @include resize-layout();
 
         .heading {
             margin-bottom: 15px;
@@ -1023,8 +1023,6 @@
         size: cover;
     }
 
-    ;
-
     &.trigger .live-movie-box {
         .image img {
             $duration: ($duration-counter - 0.35);
@@ -1034,7 +1032,7 @@
         .content .info {
             @for $i from 1 through $item-count-up {
                 #count-up li:nth-child(#{$i}) {
-                    $duration: $duration-counter/$item-count-up;
+                    $duration: calc($duration-counter/$item-count-up);
                     $delay: $duration * ($i - 1);
 
                     @if ($i ==$item-count-up) {
@@ -1050,7 +1048,7 @@
 
             @for $i from 1 through $item-count-down {
                 #count-down li:nth-child(#{$i}) {
-                    $duration: $duration-counter/$item-count-down;
+                    $duration: calc($duration-counter/$item-count-down);
                     $delay: $duration * ($i - 1);
 
                     @if ($i ==$item-count-down) {
@@ -1067,7 +1065,7 @@
     }
 
     .live-movie-box {
-        @include mixins.set-layout($width-section);
+        @include resize-layout();
         @include mixins.flex-vertical;
         justify-content: space-between;
 
@@ -1242,7 +1240,7 @@
     padding: 80px 0 55px;
 
     .footer-box {
-        @include mixins.set-layout($width-section);
+        @include resize-layout();
 
         .footer-navbar {
             @include mixins.flex-vertical;
@@ -1349,7 +1347,7 @@
     background-color: $bg-dark;
 
     &-box {
-        @include mixins.set-layout($width-section);
+        @include resize-layout();
         @include mixins.flex-vertical;
         justify-content: space-between;
 
