@@ -25,21 +25,35 @@
 
     .navbar-inner {
         height: 100%;
+        transition: all 0.25s linear;
         @include resize-layout();
         @include mixins.flex-vertical;
+
+        .navbar-logo {
+            margin-right: auto;
+            flex-shrink: 0;
+        }
 
         .navbar-box {
             @include mixins.flex-vertical;
             align-self: stretch;
             margin: 0 auto;
 
+            @include custom-screen("max-width", $desktop-screen - 1px) {
+                display: none;
+            }
+
             .navbar-item {
                 display: block;
                 position: relative;
                 height: 100%;
-                @include mixins.flex-center;
                 padding: 0 23px;
                 cursor: pointer;
+                @include mixins.flex-center;
+
+                @include custom-screen("max-width", $large-screen - 1px) {
+                    padding: 20px;
+                }
 
                 &.parent {
                     .dropdown {
@@ -106,7 +120,12 @@
         }
 
         .navbar-action {
+            margin-left: auto;
             @include mixins.flex-vertical;
+
+            @include custom-screen("max-width", $tablet-screen - 1px) {
+                display: none;
+            }
 
             .search-btn a {
                 color: $text-white;
@@ -130,6 +149,10 @@
                 gap: 6px;
                 margin-right: 30px;
 
+                @include custom-screen("max-width", $large-screen - 1px) {
+                    margin-right: unset;
+                }
+
                 a {
                     font-size: 20px;
                     color: $accent;
@@ -151,11 +174,180 @@
                 }
             }
 
-            .btn {
+            .signin-btn {
                 font-size: 14px;
+
+                @include custom-screen("max-width", $large-screen - 1px) {
+                    display: none;
+                }
+            }
+        }
+
+        .navbar-menu {
+            display: block;
+            margin-left: 40px;
+            font-size: 30px;
+            line-height: 1;
+            color: $text-white;
+            cursor: pointer;
+
+            @include custom-screen("min-width", $desktop-screen) {
+                display: none;
             }
         }
     }
+}
+
+#navbar-mobile {
+    position: fixed;
+    inset: 0 0 0 auto;
+    width: 300px;
+    z-index: 9999;
+    background-color: $bg-dark;
+    opacity: 0.4;
+    transition: all 0.35s linear;
+    transform: translateX(100%);
+
+    .navbar-header {
+        position: relative;
+        z-index: 1;
+        padding: 30px 25px;
+        @include mixins.flex-vertical;
+
+        .close-btn {
+            display: block;
+            color: $text-white;
+            font-size: 24px;
+            margin-bottom: 10px;
+            margin-left: auto;
+            transform: rotate(15deg);
+            transition: all .5s ease-in-out 0.1s;
+            cursor: pointer;
+        }
+    }
+
+    .navbar-body {
+        &-item {
+            position: relative;
+            @include mixins.flex-vertical;
+            padding: 10px 25px;
+            position: relative;
+            background-color: $bg-dark;
+
+            &:not(.dropdown) {
+                border-top: 1px solid rgba($color: $text-dark-gray, $alpha: 0.2);
+                border-bottom: 1px solid rgba($color: $text-dark-gray, $alpha: 0.2);
+            }
+
+            &:last-child {
+                border-bottom: 1px solid rgba($color: $text-dark-gray, $alpha: 0.2);
+            }
+
+            &.active {
+                >a {
+                    color: $accent;
+                }
+            }
+
+            a {
+                font-size: 15px;
+                color: $text-white;
+                margin-right: auto;
+                line-height: 24px;
+            }
+
+            .dropdown-btn {
+                @include mixins.abs-horizonal("right", 6px);
+
+                .fa {
+                    display: block;
+                    @include mixins.flex-center;
+                    color: $text-white;
+                    width: 32px;
+                    height: 32px;
+                    background-color: $bg-search-gray;
+                    text-align: center;
+                    font-size: 16px;
+                    font-weight: 700;
+                    transition: all 0.35s ease;
+                    cursor: pointer;
+                }
+            }
+
+            &.show {
+                .fa {
+                    transform: rotate(90deg);
+                }
+            }
+
+            &.parent {
+                +.dropdown {
+                    overflow: hidden;
+                    padding: unset;
+
+                    .dropdown-box {
+                        width: 100%;
+                        max-height: 0;
+                        overflow: hidden;
+                        transition: max-height 0.45s linear;
+
+                        .dropdown-item {
+                            padding: 10px 25px 10px 45px;
+
+                            &:not(:last-child) {
+                                border-bottom: 1px solid rgba($color: $text-dark-gray, $alpha: 0.2);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .navbar-footer {
+        position: relative;
+        z-index: 1;
+        @include mixins.flex-vertical;
+        justify-content: space-evenly;
+        padding: 30px 25px;
+        background-color: $bg-dark;
+
+        &-item {
+            a {
+                color: $text-white;
+                transition: color 0.25s ease;
+            }
+
+            &:hover {
+                a {
+                    color: $accent;
+                }
+            }
+        }
+    }
+
+    &.show {
+        opacity: 1;
+        transform: translateX(0);
+
+        .navbar-header .close-btn {
+            transform: rotate(90deg);
+        }
+
+        ~.overlay {
+            display: block;
+            opacity: 0.4;
+        }
+    }
+}
+
+.overlay {
+    display: none;
+    @include mixins.abs-fullsize;
+    background-color: #100e17;
+    z-index: 9998;
+    opacity: 0;
+    transform: opacity 0.25s ease;
 }
 
 #banner {
@@ -180,6 +372,25 @@
             width: 50%;
             font-size: 60px;
             margin: 0 0 30px;
+
+            @include custom-screen("max-width", $desktop-screen - 1px) {
+                font-size: 42px;
+                width: 100%;
+            }
+
+            @include custom-screen("max-width", $mobile-screen - 1px) {
+                font-size: 36px;
+            }
+        }
+
+        .banner-meta {
+            flex-wrap: wrap;
+            row-gap: 15px;
+
+            .meta-icon {
+                display: flex;
+                gap: 15px;
+            }
         }
 
         .hightlight {
@@ -333,6 +544,24 @@
         size: cover, cover, cover;
     }
 
+    .sub-title {
+        @include custom-screen("max-width", $desktop-screen - 1px) {
+            text-align: center;
+        }
+    }
+
+    .title {
+        @include custom-screen("max-width", $desktop-screen - 1px) {
+            text-align: center;
+        }
+    }
+
+    .action-item.control {
+        @include custom-screen("max-width", $desktop-screen - 1px) {
+            display: none;
+        }
+    }
+
 }
 
 #new-release,
@@ -455,60 +684,61 @@
 
             .blog-item {
                 margin-bottom: 50px;
+
                 .blog-content {
                     background-color: $pricing-card;
                     padding: 30px;
-    
+
                     >.meta-blog {
                         display: inline-block;
                         padding-bottom: 8px;
                     }
-    
+
                     >.meta-blog:first-child::after {
                         content: "|";
                         padding: 0 15px;
                         color: $text-dark-gray;
                     }
-    
+
                     .title {
                         margin: 6px 0 20px;
                         color: $text-white;
                         font-size: 26px;
                         transition: color 0.25s;
                     }
-    
+
                     p.desc {
                         padding-bottom: 15px;
                     }
-    
+
                     blockquote {
                         display: flex;
                         padding: 35px 50px 35px 40px;
                         margin: 35px 0 40px;
                         background-color: $bg-black;
                         color: $text-white;
-    
+
                         .icon-quote .fa {
                             font-size: 55px;
                             margin-right: 30px;
                             line-height: 1;
                         }
-    
+
                         .quote-centent {
                             p {
                                 font-size: 20px;
                                 line-height: 1.6;
                                 margin-bottom: 18px;
                             }
-    
+
                             .name,
                             .role {
                                 font-size: 16px;
                             }
-    
+
                             .role {
                                 color: $text-dark-gray;
-    
+
                                 &::before {
                                     content: "|";
                                     padding: 0 14px;
@@ -517,41 +747,42 @@
                             }
                         }
                     }
-    
+
                     .list-image {
                         @include mixins.flex-vertical;
                         gap: 23px;
                         margin-bottom: 32px;
                     }
-    
+
                     .footer {
                         margin-top: 15px;
                         padding-top: 20px;
                         border-top: 3px solid $psudo;
                         @include mixins.flex-vertical;
                         justify-content: space-between;
+
                         .meta-blog {
                             @include mixins.flex-vertical;
                             font-size: 12px;
-                            
+
                             .fa {
                                 margin-right: 8px;
                             }
-    
+
                             .tag {
                                 display: flex;
                                 margin-left: 15px;
                                 gap: 2px;
-    
+
                                 .tag-item {
                                     text-transform: capitalize;
                                     color: $text-light-gray;
                                 }
-    
+
                                 .tag-item:not(:last-child)::after {
                                     content: ",";
                                 }
-    
+
                             }
                         }
                     }
@@ -563,21 +794,25 @@
                     margin: 40px 0 80px;
                     padding: 40px 60px 40px 40px;
                 }
+
                 .title-decoration {
                     margin-bottom: 45px;
                 }
+
                 .list-comment {
                     display: flex;
                     flex-direction: column;
                     gap: 20px;
                     margin-bottom: 80px;
-                    
+
                     .comment-card {
                         gap: 25px;
+
                         .comment-content {
                             display: flex;
                             flex-direction: column;
                             gap: 16px;
+
                             .comment-text {
                                 @include mixins.flex-vertical;
                                 flex-direction: column;
@@ -862,36 +1097,73 @@
         display: flex;
         align-items: stretch;
         overflow: hidden;
+        gap: 50px;
 
-        .service-poster {
-            flex: 0 0 50%;
+        @include custom-screen("max-width", $desktop-screen - 1px) {
+            flex-direction: column;
         }
 
-        .service-item {
-            flex-basis: 50%;
+        .service-poster {
+            width: width-flex-item(2, 50px);
+            @include custom-screen("max-width", $desktop-screen - 1px) {
+                width: 100%;
+            }
+            position: relative;
             display: flex;
             gap: 21px;
+            > img {
+                width: 100%;
+                object-fit: fill;
+            }
 
-            .btn {
+            .download-btn {
                 align-self: flex-end;
+                transition: all 0.25s ease;
+
+                @include custom-screen("max-width", $large-screen - 1px) {
+                    position: absolute;
+                    right: 0px;
+                    bottom: 0;
+                }
+                @include custom-screen("max-width", $desktop-screen - 1px) {
+                    position: relative;
+                }
+                @include custom-screen("max-width", $tablet-screen - 1px) {
+                    position: absolute;
+                    right: 0px;
+                    bottom: 0;
+                    padding: 36px 30px;
+                }
             }
         }
 
         .service-content {
-            padding-left: 55px;
             flex-direction: column;
             align-self: center;
+            width: width-flex-item(2, 50px);
+            @include custom-screen("max-width", $desktop-screen - 1px) {
+                width: 100%;
+            }
+            padding-left: 20px;
 
             .desc {
-                margin-bottom: 24px;
+                margin-top: 20px;
+                margin-bottom: 45px;
                 color: $text-light-gray;
             }
 
             .content-meta {
+                padding-right: 110px;
+                @include custom-screen("max-width", $large-screen - 1px) {
+                    padding-right: unset;
+                }
+
                 &-item {
                     display: flex;
                     gap: 20px;
-
+                    @include custom-screen("max-width", $mobile-screen - 1px) {
+                        flex-direction: column;
+                    }
                     .meta-icon {
                         position: relative;
                         flex: 0 0 95px;
@@ -979,13 +1251,22 @@
                 @include mixins.flex-center;
                 gap: 15px;
 
+                @include custom-screen("max-width", $tablet-screen - 1px) {
+                    flex-wrap: wrap;
+                    justify-content: flex-start;
+                }
+
                 .btn-item {
-                    .btn {
-                        font-size: 13px;
-                        position: relative;
+                    position: relative;
+
+                    @include custom-screen("max-width", $tablet-screen - 1px) {
+                        width: width-flex-item(2, 15px);
+                        @include mixins.flex-horizonal;
                     }
 
-                    .btn.active {
+                    background-color: $bg-black-btn;
+
+                    &.active {
 
                         &::before,
                         &::after {
@@ -999,6 +1280,18 @@
                             left: unset;
                             right: 0;
                         }
+
+                        .btn {
+                            color: $accent;
+                        }
+                    }
+
+                    .btn {
+                        @include custom-screen("max-width", $tablet-screen - 1px) {
+                            width: 100%;
+                        }
+
+                        font-size: 13px;
                     }
                 }
             }
@@ -1030,13 +1323,15 @@
         }
 
         .content .info {
+
             @for $i from 1 through $item-count-up {
                 #count-up li:nth-child(#{$i}) {
                     $duration: calc($duration-counter/$item-count-up);
                     $delay: $duration * ($i - 1);
 
-                    @if ($i ==$item-count-up) {
+                    @if ($i == $item-count-up) {
                         $last-duration: $duration +0.12;
+                        transform: translateY(0);
                         animation: count-up-key $last-duration linear $delay forwards;
                     }
 
@@ -1051,8 +1346,9 @@
                     $duration: calc($duration-counter/$item-count-down);
                     $delay: $duration * ($i - 1);
 
-                    @if ($i ==$item-count-down) {
+                    @if ($i == $item-count-down) {
                         $last-duration: $duration +0.12;
+                        transform: translateY(0);
                         animation: count-down-key $last-duration linear $delay forwards;
                     }
 
@@ -1185,9 +1481,26 @@
         margin: 0 auto;
         padding: 45px 80px;
         @include mixins.flex-vertical;
+        justify-content: space-between;
+        @include resize-layout();
+
+        @include custom-screen("min-width", $desktop-screen) {
+            padding: 45px 0;
+        }
+
+        @include custom-screen("max-width", $desktop-screen - 1px) {
+            padding: 55px 0;
+            flex-wrap: wrap;
+            gap: 25px;
+
+            .content,
+            form.subcribe-email {
+                flex: 0 1 100%;
+                text-align: center;
+            }
+        }
 
         .content {
-            flex-basis: 50%;
             padding: 0 15px;
 
             h3 {
@@ -1204,12 +1517,17 @@
         }
 
         form.subcribe-email {
-            flex-basis: 50%;
+            width: 50%;
             padding: 0 15px;
             position: relative;
 
             input#email {
                 padding: 17px 200px 17px 25px;
+
+                @include custom-screen("max-width", $desktop-screen - 1px) {
+                    padding: 17px 25px;
+                }
+
                 width: 100%;
                 border-radius: 4px;
                 border: 2px solid white;
@@ -1226,6 +1544,12 @@
                 border-radius: 4px;
                 line-height: 21px;
                 border: 2px solid $bg-dark;
+
+                @include custom-screen("max-width", $desktop-screen - 1px) {
+                    position: relative;
+                    margin-top: 15px;
+                    inset: unset;
+                }
 
                 &:hover {
                     border: 2px solid $bg-dark;
@@ -1244,73 +1568,136 @@
 
         .footer-navbar {
             @include mixins.flex-vertical;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            row-gap: 45px;
             padding-bottom: 35px;
             border-bottom: $border-footer;
 
             .navbar-logo {
-                margin-right: auto;
-            }
-
-            .navbar-box {
-                display: flex;
-                gap: 27px;
-
-                .navbar-item a {
-                    text-transform: uppercase;
-                    display: block;
-                    padding: 10px;
-                    font-size: 14px;
-                    color: $text-light;
-                    transition: color 0.25s;
-
-                    &:hover {
-                        color: $accent;
-                    }
+                @include custom-screen("max-width", $desktop-screen - 1px) {
+                    margin: 0 auto;
                 }
             }
 
-            .search-box {
-                margin-left: 30px;
-                min-width: 285px;
-                position: relative;
+            .footer-navbar-wrap {
+                @include mixins.flex-vertical;
+                column-gap: 30px;
+                row-gap: 20px;
+                flex-wrap: wrap;
 
-                input {
+                @include custom-screen("max-width", $desktop-screen - 1px) {
                     width: 100%;
-                    padding: 14px 60px 14px 20px;
-                    border-radius: 30px;
-                    font-size: 12px;
-                    outline: 0;
-                    border: 0;
-                    background-color: $bg-search;
-                    color: $text-white;
-                    box-shadow: $input-shadow;
                 }
 
-                .search {
-                    font-size: 12px;
-                    @include mixins.abs-horizonal("right");
-                    color: $accent;
-                    padding: 8px 20px 8px 15px;
+                @include custom-screen("max-width", $tablet-screen - 1px) {
+                    justify-content: center;
+                }
 
-                    &::before {
-                        content: "";
-                        @include mixins.abs-horizonal("left");
-                        width: 2px;
-                        height: 40%;
-                        background-color: $psudo;
+                .navbar-box {
+                    display: flex;
+                    gap: 27px;
+
+                    @include custom-screen("max-width", $desktop-screen - 1px) {
+                        gap: 15px;
+                    }
+
+                    @include custom-screen("max-width", $mobile-screen - 1px) {
+                        width: 100%;
+                        flex-wrap: wrap;
+                        justify-content: space-evenly;
+                        row-gap: 10px;
+                        column-gap: 25px;
+                    }
+
+                    .navbar-item a {
+                        display: block;
+                        text-transform: uppercase;
+                        padding: 10px;
+                        font-size: 14px;
+                        color: $text-light;
+                        transition: color 0.25s;
+
+                        &:hover {
+                            color: $accent;
+                        }
+                    }
+                }
+
+                .search-box {
+                    position: relative;
+                    min-width: 285px;
+
+                    @include custom-screen("max-width", $large-screen - 1px) {
+                        min-width: unset;
+                    }
+
+                    @include custom-screen("max-width", $tablet-screen - 1px) {
+                        width: 100%;
+                    }
+
+                    input {
+                        width: 100%;
+                        padding: 14px 60px 14px 20px;
+                        border-radius: 30px;
+                        font-size: 12px;
+                        outline: 0;
+                        border: 0;
+                        background-color: $bg-search;
+                        color: $text-white;
+                        box-shadow: $input-shadow;
+                    }
+
+                    .search {
+                        font-size: 12px;
+                        @include mixins.abs-horizonal("right");
+                        color: $accent;
+                        padding: 8px 20px 8px 15px;
+
+                        &::before {
+                            content: "";
+                            @include mixins.abs-horizonal("left");
+                            width: 2px;
+                            height: 40%;
+                            background-color: $psudo;
+                        }
                     }
                 }
             }
+
+
         }
 
         .footer-info {
             padding-top: 40px;
             @include mixins.flex-vertical;
             justify-content: space-between;
+            flex-wrap: wrap;
+
+            @include custom-screen("max-width", $tablet-screen - 1px) {
+                row-gap: 20px;
+                justify-content: center;
+            }
 
             .info-box {
                 display: flex;
                 gap: 50px;
+
+                @include custom-screen("max-width", $tablet-screen - 1px) {
+                    width: 100%;
+                    justify-content: space-around;
+                    flex-wrap: wrap;
+                    column-gap: 40px;
+                    row-gap: 15px;
+                }
+
+                @include custom-screen("max-width", $mobile-screen - 1px) {
+                    width: 100%;
+                    justify-content: space-evenly;
+                    flex-wrap: wrap;
+                    column-gap: 25px;
+                    row-gap: 15px;
+                }
 
                 li a {
                     text-transform: uppercase;
@@ -1350,6 +1737,13 @@
         @include resize-layout();
         @include mixins.flex-vertical;
         justify-content: space-between;
+        flex-wrap: wrap;
+        row-gap: 30px;
+        column-gap: 15px;
+
+        @include custom-screen("max-width", $tablet-screen - 1px) {
+            justify-content: center;
+        }
 
         div {
             color: $text-light-gray;
@@ -1425,7 +1819,11 @@
     overflow: hidden;
     box-shadow: $float-btn-shadow;
     opacity: 0;
-    transition: all 0.75s ease;
+    transition: all 0.75s cubic-bezier(0.18, 0.84, 0.97, 1);
+
+    @include custom-screen("max-width", $desktop-screen - 1px) {
+        display: none;
+    }
 
     &.show {
         opacity: 1;

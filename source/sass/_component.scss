@@ -621,20 +621,25 @@ p.desc {
         letter-spacing: 1px;
         text-transform: uppercase;
         margin-bottom: 12px;
-    }
 
-    .sub-title.decoration {
-        padding-left: 55px;
-        position: relative;
+        &.text-dark {
+            color: $text-dark;
+        }
 
-        &::before {
-            content: "";
-            @include mixins.abs-horizonal("left");
-            width: 40px;
-            height: 3px;
-            background-color: $accent;
+        &.decoration {
+            padding-left: 55px;
+            position: relative;
+
+            &::before {
+                content: "";
+                @include mixins.abs-horizonal("left");
+                width: 40px;
+                height: 3px;
+                background-color: $accent;
+            }
         }
     }
+
 
     .title {
         color: $text-white;
@@ -642,6 +647,10 @@ p.desc {
         font-weight: 700;
         line-height: 1.2;
         text-transform: capitalize;
+
+        @include custom-screen("max-width", $tablet-screen - 1px) {
+            font-size: 32px;
+        }
 
         &.small {
             font-size: 30px;
@@ -678,6 +687,7 @@ p.desc {
         flex-direction: column;
         gap: 24px;
         flex-grow: 1;
+        transition: all 0.25s linear;
         @include resize-grid("max-width");
 
         .card-meta {
@@ -768,6 +778,7 @@ p.desc {
     padding: 120px 0 70px;
 
     .suggestion-box {
+        transition: all 0.25s linear;
         @include resize-layout();
 
         .control {
@@ -823,6 +834,13 @@ p.desc {
         .control.heading {
             @include mixins.flex-vertical;
             justify-content: space-between;
+            flex-wrap: wrap;
+            row-gap: 32px;
+            column-gap: 30px;
+
+            @include custom-screen("max-width", $desktop-screen - 1px) {
+                justify-content: center;
+            }
         }
 
         .movie-wrapper {
@@ -850,7 +868,8 @@ p.desc {
                 }
 
                 .movie-item {
-                   @include resize-grid("min-width");
+                    transition: all 0.25s linear;
+                    @include resize-grid("min-width");
                 }
             }
         }

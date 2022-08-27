@@ -3,13 +3,27 @@
 @import "variables.scss";
 
 // Responsive
+$small-screen: 390px;
 $mobile-screen: 576px;
 $tablet-screen: 768px;
 $desktop-screen: 992px;
-$large-sceen: 1220px;
+$large-screen: 1220px;
+
+
+// Desktop: 1920px
+// Ipad pro: 992px
+// Ipad air: 820px
+// Ipad Mini: 768px
+// Iphone 12 Pro: 390px
+
+@mixin small-screen() {
+    @media (max-width: #{$mobile-screen - 1px}) {
+        @content;
+    }
+}
 
 @mixin mobile-screen() {
-    @media (max-width: #{$tablet-screen - 1px}) {
+    @media (min-width: #{$mobile-screen}) and (max-width: #{$tablet-screen - 1px}) {
         @content;
     }
 }
@@ -21,18 +35,27 @@ $large-sceen: 1220px;
 }
 
 @mixin desktop-screen() {
-    @media (min-width: #{$desktop-screen}) and (max-width: #{$large-sceen - 1px}) {
+    @media (min-width: #{$desktop-screen}) and (max-width: #{$large-screen - 1px}) {
         @content;
     }
 }
 
 @mixin large-screen() {
-    @media (min-width: #{$large-sceen}) {
+    @media (min-width: #{$large-screen}) {
+        @content;
+    }
+}
+
+@mixin custom-screen($width, $value) {
+    @media (#{$width}: #{$value}) {
         @content;
     }
 }
 
 @mixin resize-layout() {
+    @include small-screen() {
+        @include mixins.set-layout(100%);
+    };
     @include mobile-screen() {
         @include mixins.set-layout(540px);
     };
@@ -48,8 +71,11 @@ $large-sceen: 1220px;
 }
 
 @mixin resize-grid($width) {
+    @include small-screen() {
+        #{$width}: width-flex-item(1, 30px)
+    };
     @include mobile-screen() {
-        #{$width}: width-flex-item(1, 0px)
+        #{$width}: width-flex-item(2, 30px)
     };
     @include tablet-screen() {
         #{$width}: width-flex-item(2, 30px)

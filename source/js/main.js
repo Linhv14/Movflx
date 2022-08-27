@@ -1,5 +1,22 @@
 function loadDOM() {
 
+    const navbarMobileBtn = document.querySelector(".navbar-menu");
+    const navbarMobile = document.querySelector("#navbar-mobile");
+    const closeNavMobile = document.querySelector(".navbar-header .close-btn")
+    const overlayNavbar = document.querySelector(".overlay");
+
+    navbarMobileBtn.addEventListener("click", () => {
+        navbarMobile.classList.add("show")
+    })
+
+    closeNavMobile.addEventListener("click", () => {
+        navbarMobile.classList.remove("show")
+    })
+
+    overlayNavbar.addEventListener("click", () => {
+        navbarMobile.classList.remove("show")
+    })
+
     const trailers = document.querySelectorAll(".trailer-source")
 
     if (trailers.length > 0) {
@@ -24,6 +41,22 @@ function loadDOM() {
             }
         })
     }
+
+    const dropdownBtns = document.querySelectorAll(".dropdown-btn")
+    dropdownBtns.forEach(dropdownBtn => {
+        dropdownBtn.addEventListener("click", function() {
+            const parent = dropdownBtn.parentElement
+            const dropdownBox = parent.nextElementSibling
+            const dropdownBoxChild = dropdownBox.querySelector(".dropdown-box")
+            parent.classList.toggle("show")
+
+            if (dropdownBoxChild.style.maxHeight) {
+                dropdownBoxChild.style.maxHeight = null;
+            } else {
+                dropdownBoxChild.style.maxHeight = dropdownBoxChild.scrollHeight*2 + "px"
+            }
+        })
+    })
 
     const searchBtn = document.querySelector(".search-btn")
     const searchWrapper = document.querySelector("#search")
@@ -59,7 +92,6 @@ function loadDOM() {
         }
 
         accordion.addEventListener("click", function () {
-            console.log(this.classList.toggle("active"));
             var panel = this.nextElementSibling
             if (panel.style.maxHeight) {
                 this.classList.remove("active")
@@ -110,7 +142,6 @@ function includeHTML() {
     var z, i, elmnt, file, xhttp;
 
     z = document.getElementsByClassName("root-inner");
-    console.log(z.length);
     for (i = 0; i < z.length; i++) {
         elmnt = z[i];
 

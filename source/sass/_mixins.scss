@@ -69,8 +69,8 @@
     #{$attribute}: $value;
 }
 
-@mixin set-layout($width) {
+@mixin set-layout($width, $padding: 15px) {
     width: $width;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 $padding;
 }
