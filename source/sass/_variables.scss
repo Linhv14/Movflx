@@ -4,9 +4,9 @@ $width-section: 1330px;
 $width-section-large: 1420px;
 
 // Animation in Live-Movie Section
-$item-count-up: 3;
-$item-count-down: 10;
-$duration-counter: 1.5s;
+$item-count-up: 3; // Số phần tử của animation đếm lên
+$item-count-down: 10; // Số phần tử của animation đếm xuống
+$duration-counter: 1.5s; // Thời gian diễn ra của 2 animation
 // --- End
 
 $movie-col: 4;

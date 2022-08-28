@@ -785,6 +785,7 @@ p.desc {
             .control-action {
                 margin: 0;
                 @include mixins.flex-vertical;
+                flex-wrap: wrap;
                 font-size: 12px;
                 gap: 12px;
 
@@ -906,6 +907,9 @@ p.desc {
     display: none;
     position: fixed;
     inset: 0;
+    line-height: 0;
+    max-width: 900px;
+    margin: 0 auto;
 
     &::before {
         content: "";
@@ -920,10 +924,22 @@ p.desc {
         z-index: 9998;
     }
 
-    .video {
-        @include mixins.abs-center();
-        z-index: 9999;
-        min-width: 900px;
+    .video-box {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        padding-bottom: 56.25%;
+        height: 0;
+        width: 100%;
+        margin: 0 auto;
+
+        .video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
     }
 }
 

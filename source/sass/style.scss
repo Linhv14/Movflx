@@ -254,6 +254,7 @@
                 color: $text-white;
                 margin-right: auto;
                 line-height: 24px;
+                text-transform: capitalize
             }
 
             .dropdown-btn {
@@ -1364,6 +1365,10 @@
         @include resize-layout();
         @include mixins.flex-vertical;
         justify-content: space-between;
+        @include custom-screen("max-width", $desktop-screen - 1px) {
+            flex-direction: column;
+            row-gap: 50px;
+        }
 
         .content {
 
@@ -1376,8 +1381,9 @@
             .info {
                 margin: 30px 0 24px;
                 @include mixins.flex-vertical;
-                gap: 35px;
-
+                flex-wrap: wrap;
+                column-gap: 35px;
+                row-gap: 15px;
                 h3 {
                     color: transparent;
                     -webkit-text-stroke: 2px $text-red;
@@ -1458,7 +1464,10 @@
         .image {
             margin-right: -90px;
             flex: 0 0 60%;
-
+            @include custom-screen("max-width", $desktop-screen - 1px) {
+                margin-right: unset;
+                flex: unset;
+            }
             img {
                 display: block;
                 transform: translateX(20%);
