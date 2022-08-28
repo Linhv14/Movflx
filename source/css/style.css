@@ -746,6 +746,11 @@ p.desc.dark {
   text-transform: uppercase;
   margin-bottom: 12px;
 }
+@media (max-width: 991px) {
+  .heading .sub-title:not(.decoration) {
+    text-align: center;
+  }
+}
 .heading .sub-title.text-dark {
   color: #656363;
 }
@@ -1049,6 +1054,11 @@ p.desc.dark {
   align-items: center;
   padding: 10px 0;
   margin: 20px 0 0 0;
+}
+@media (max-width: 991px) {
+  .pagination {
+    justify-content: center;
+  }
 }
 .pagination-item.active a, .pagination-item:hover a {
   background-color: #e4d804;
@@ -1798,6 +1808,16 @@ p.desc.dark {
   line-height: 1.3;
   text-transform: capitalize;
 }
+@media (max-width: 767px) {
+  #breadcrumb .title {
+    font-size: 48px;
+  }
+}
+@media (max-width: 575px) {
+  #breadcrumb .title {
+    font-size: 38px;
+  }
+}
 #breadcrumb .title .hightlight {
   color: #e4d804;
 }
@@ -1837,11 +1857,6 @@ p.desc.dark {
   background-position: center, center, center;
   background-repeat: repeat, no-repeat, repeat;
   background-size: cover, cover, cover;
-}
-@media (max-width: 991px) {
-  #coming-movie .sub-title {
-    text-align: center;
-  }
 }
 @media (max-width: 991px) {
   #coming-movie .title {

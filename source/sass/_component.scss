@@ -621,6 +621,11 @@ p.desc {
         letter-spacing: 1px;
         text-transform: uppercase;
         margin-bottom: 12px;
+        &:not(.decoration) {
+            @include custom-screen("max-width", $desktop-screen - 1px) {
+                text-align: center;
+            }
+        }
 
         &.text-dark {
             color: $text-dark;
@@ -881,7 +886,9 @@ p.desc {
     @include mixins.flex-vertical();
     padding: 10px 0;
     margin: 20px 0 0 0;
-
+    @include custom-screen("max-width", $desktop-screen - 1px) {
+        justify-content: center;
+    }
     &-item {
 
         &.active a,

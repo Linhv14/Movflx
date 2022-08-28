@@ -496,6 +496,13 @@
         margin-bottom: 8px;
         line-height: 1.3;
         text-transform: capitalize;
+        @include custom-screen("max-width", $tablet-screen - 1px) {
+            font-size: 48px;
+        }
+
+        @include custom-screen("max-width", $mobile-screen - 1px) {
+            font-size: 38px;
+        }
 
         .hightlight {
             color: $accent;
@@ -543,12 +550,6 @@
         position: center, center, center;
         repeat: repeat, no-repeat, repeat;
         size: cover, cover, cover;
-    }
-
-    .sub-title {
-        @include custom-screen("max-width", $desktop-screen - 1px) {
-            text-align: center;
-        }
     }
 
     .title {
