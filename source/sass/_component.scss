@@ -520,6 +520,10 @@ p.desc {
         .group-input-inner {
             display: flex;
             gap: 30px;
+            @include custom-screen("max-width", $tablet-screen - 1px){
+                flex-direction: column;
+                gap: 0;
+            }
 
             input {
                 flex-grow: 1;
@@ -793,6 +797,10 @@ p.desc {
                 flex-wrap: wrap;
                 font-size: 12px;
                 gap: 12px;
+
+                @include custom-screen("max-width", $tablet-screen - 1px) {
+                    justify-content: center;
+                }
 
                 .active a {
                     border: 2px solid $accent;

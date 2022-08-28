@@ -52,21 +52,21 @@ $large-screen: 1220px;
     }
 }
 
-@mixin resize-layout() {
+@mixin resize-layout($padding: 15px) {
     @include small-screen() {
-        @include mixins.set-layout(100%);
+        @include mixins.set-layout(100%, $padding);
     };
     @include mobile-screen() {
-        @include mixins.set-layout(540px);
+        @include mixins.set-layout(540px, $padding);
     };
     @include tablet-screen() {
-        @include mixins.set-layout(720px);
+        @include mixins.set-layout(720px, $padding);
     };
     @include desktop-screen() {
-        @include mixins.set-layout(960px);
+        @include mixins.set-layout(960px, $padding);
     };
     @include large-screen() {
-        @include mixins.set-layout(1330px);
+        @include mixins.set-layout(1330px, $padding);
     };
 }
 

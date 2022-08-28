@@ -846,12 +846,11 @@
         image: url("../../assets/images/bg/episode_bg.jpg");
         repeat: repeat;
     }
-
-    ;
     padding: 120px 0 115px;
+    box-sizing: border-box;
 
     .movie-detail-box {
-        width: $width-section;
+        @include resize-layout(0);
         margin: 0 auto;
 
         .main-detail-box {
@@ -928,14 +927,32 @@
         .pricing-group-card {
             padding: 0 80px;
             display: flex;
+            justify-content: center;
             gap: 30px;
-
+            flex-wrap: wrap;
+            @include custom-screen("max-width", $large-screen - 1px) {
+                padding: unset;
+            }
+            @include mobile-screen() {
+                padding: 0 80px;
+            }
             .card-item {
                 padding: 45px 40px 60px;
                 margin-bottom: 30px;
                 @include mixins.flex-vertical;
                 flex-direction: column;
                 width: width-flex-item(3, 30px);
+                @include custom-screen("max-width", $desktop-screen - 1px) {
+                    width: width-flex-item(2, 30px);
+                    margin-bottom: unset;
+                }
+                @include custom-screen("max-width", $tablet-screen - 1px) {
+                    width: width-flex-item(1, 30px);
+                    padding: 40px 25px 45px;
+                }
+                @include custom-screen("max-width", $mobile-screen - 1px) {
+                    width: width-flex-item(1, 30px);
+                }
                 background-color: $pricing-card;
                 border: 2px solid $pricing-card;
                 border-radius: 4px;
@@ -1019,7 +1036,9 @@
         @include resize-layout();
         display: flex;
         gap: 30px;
-
+        @include custom-screen("max-width", $desktop-screen - 1px) {
+            flex-direction: column;
+        }
         .group-input,
         .contact-info {
             .title-decoration {
@@ -1042,7 +1061,9 @@
                 padding: 40px 34px 60px;
                 background-color: $pricing-card;
                 font-size: 14px;
-
+                @include custom-screen("max-width", $tablet-screen - 1px) {
+                    padding: 40px 25px 60px;
+                }
                 &-header {
                     padding-bottom: 25px;
                     margin-bottom: 10px;
@@ -1060,6 +1081,7 @@
                             height: 46px;
                             border-radius: 50%;
                             @include mixins.flex-center;
+                            flex: 0 0 46px;
                             background-color: $accent;
                             margin-right: 15px;
 
