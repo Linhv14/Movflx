@@ -38,7 +38,7 @@
             @include mixins.flex-vertical;
             align-self: stretch;
             margin: 0 auto;
-
+            transition: all 0.25s ease;
             @include custom-screen("max-width", $desktop-screen - 1px) {
                 display: none;
             }
@@ -50,7 +50,7 @@
                 padding: 0 23px;
                 cursor: pointer;
                 @include mixins.flex-center;
-
+                transition: all 0.25s ease;
                 @include custom-screen("max-width", $large-screen - 1px) {
                     padding: 20px;
                 }
@@ -344,11 +344,12 @@
 
 .overlay {
     display: none;
-    @include mixins.abs-fullsize;
+    position: fixed;
+    inset: 0;
     background-color: #100e17;
     z-index: 9998;
     opacity: 0;
-    transform: opacity 0.25s ease;
+    transition: opacity 0.25s ease;
 }
 
 #banner {
@@ -356,6 +357,7 @@
     padding: 295px 0 273px 0;
 
     .banner-box {
+        transition: all 0.25s ease;
         @include resize-layout();
 
         &>* {
@@ -373,6 +375,7 @@
             width: 50%;
             font-size: 60px;
             margin: 0 0 30px;
+            transition: all 0.25s ease;
 
             @include custom-screen("max-width", $desktop-screen - 1px) {
                 font-size: 42px;
@@ -384,18 +387,9 @@
             }
         }
 
-        .banner-meta {
-            flex-wrap: wrap;
-            row-gap: 15px;
-
-            .meta-icon {
-                display: flex;
-                gap: 15px;
-            }
-        }
-
-        .hightlight {
-            color: $accent;
+        .banner-meta .meta-icon {
+            display: flex;
+            gap: 15px;
         }
 
         .text-white {
@@ -420,14 +414,16 @@
     padding: 175px 0 120px;
 
     .movie-banner-box {
-        width: $width-section;
-        margin: 0 auto;
+        transition: all 0.25s ease;
+        @include resize-layout(0);
         display: flex;
 
         .thumb-image {
-            min-width: 25%;
+            max-width: 25%;
+            flex: 0 0 25%;
             padding: 0 15px;
             position: relative;
+            transition: all 0.25s ease;
 
             a.play-btn {
                 @include mixins.abs-center;
@@ -437,6 +433,7 @@
         }
 
         .content {
+            transition: all 0.25s ease;
             align-self: center;
             width: 50%;
             margin: 0 15px;
@@ -445,9 +442,11 @@
             >.sub-title {
                 font-size: 26px;
                 margin-bottom: 10px;
+                transition: all 0.25s ease;
             }
 
             >.title {
+                transition: all 0.25s ease;
                 color: $text-white;
                 font-size: 60px;
                 margin-bottom: 20px;
@@ -463,14 +462,93 @@
         }
 
         .btn-download {
+            transition: all 0.25s ease;
             margin: 0 15px;
             width: 25%;
             position: relative;
 
             >.btn {
+                transition: all 0.25s ease;
                 position: absolute;
+                margin: 0 15px;
                 right: 0;
                 bottom: 0;
+            }
+        }
+
+        @include custom-screen("max-width", $large-screen - 1px) {
+            flex-wrap: wrap;
+            row-gap: 20px;
+
+            .thumb-image {
+                max-width: width-flex-percent(1, 3, 23px);
+                flex: unset;
+            }
+
+            .content {
+                width: width-flex-percent(2, 3, 23px);
+            }
+
+            .btn-download {
+
+                width: 100%;
+                height: 70px;
+
+                >.btn {
+                    position: relative;
+                    right: unset;
+                    bottom: unset;
+                    margin: unset;
+                    display: inline-flex;
+                    padding: 20px 35px;
+                    left: 0;
+                    top: 0;
+                    transform-origin: top left;
+                    writing-mode: unset;
+
+                    img {
+                        width: 12px;
+                        height: 12px;
+                    }
+                }
+            }
+        }
+
+        @include custom-screen("max-width", $desktop-screen - 1px) {
+            .thumb-image {
+                max-width: 45%;
+                margin: 0 auto 30px;
+            }
+
+            .content {
+                width: 100%;
+                padding-left: unset;
+                margin-bottom: 10px;
+
+                > .sub-title {
+                    font-size: 20px;
+                }
+                > .title {
+                    font-size: 50px;
+                }
+            }
+        }
+
+        @include custom-screen("max-width", $tablet-screen - 1px) {
+            .thumb-image {
+                max-width: 80%;
+            }
+            .content > .title {
+                font-size: 46px;
+            }
+        }
+
+        @include custom-screen("max-width", $mobile-screen - 1px) {
+            .thumb-image {
+                max-width: 100%;
+            }
+            .content > .title {
+                font-size: 36px;
             }
         }
     }
@@ -496,16 +574,14 @@
         margin-bottom: 8px;
         line-height: 1.3;
         text-transform: capitalize;
+        transition: all 0.25s ease;
+
         @include custom-screen("max-width", $tablet-screen - 1px) {
             font-size: 48px;
         }
 
         @include custom-screen("max-width", $mobile-screen - 1px) {
             font-size: 38px;
-        }
-
-        .hightlight {
-            color: $accent;
         }
     }
 
@@ -845,43 +921,84 @@
     background: {
         image: url("../../assets/images/bg/episode_bg.jpg");
         repeat: repeat;
+        size: cover;
     }
+
     padding: 120px 0 115px;
-    box-sizing: border-box;
 
     .movie-detail-box {
         @include resize-layout(0);
-        margin: 0 auto;
 
         .main-detail-box {
             display: flex;
             align-items: flex-start;
+
+            @include custom-screen("max-width", $desktop-screen - 1px) {
+                flex-direction: column;
+                gap: 50px;
+            }
 
             .main-detail {
                 margin-right: 20px;
                 padding: 0 15px;
                 width: width-flex-percent(2, 3);
 
+                @include custom-screen("max-width", $desktop-screen - 1px) {
+                    width: 100%;
+                }
+
+                .accordion-box {
+                    position: relative;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        bottom: 0;
+                        width: 100%;
+                        height: 3px;
+                        background-color: $psudo;
+                    }
+                }
+
                 .heading .title-inner {
                     @include mixins.flex-vertical;
                     padding-bottom: 25px;
+                    margin-bottom: 20px;
                     border-bottom: 3px solid $psudo;
+                    flex-wrap: wrap;
+                    gap: 25px;
 
                     .title.small {
                         flex-grow: 1;
                     }
 
-                    .view-counter {
-                        font-size: 14px;
-                        color: $text-white;
-                        padding-right: 18px;
+                    .view-counter-box {
+                        @include mixins.flex-vertical;
+                        .view-counter {
+                            font-size: 14px;
+                            color: $text-white;
+                            padding-right: 18px;
+                        }
                     }
                 }
             }
 
             .main-image {
                 padding: 0 15px;
-                width: width-flex-percent(1, 3);
+                max-width: width-flex-percent(1, 3);
+                transition: all 0.25s ease;
+                @include custom-screen("max-width", $desktop-screen - 1px) {
+                    align-self: center;
+                    max-width: 60%;
+                }
+
+                @include custom-screen("max-width", $tablet-screen - 1px) {
+                    max-width: 80%;
+                }
+
+                @include custom-screen("max-width", $mobile-screen - 1px) {
+                    max-width: 100%;
+                }
             }
         }
     }
@@ -896,6 +1013,15 @@
             font-size: 24px;
             background-color: $bg-black;
             border: 1px solid $psudo;
+            transition: all 0.25s ease;
+            @include custom-screen("max-width", $tablet-screen - 1px) {
+                font-size: 22px;
+                padding: 25px 30px;
+
+                ~p.desc {
+                    padding: unset;
+                }
+            }
         }
 
         p.desc {
@@ -917,6 +1043,7 @@
     }
 
     .pricing-box {
+        transition: all 0.25s ease;
         @include resize-layout();
 
         .pricing-image {
@@ -930,29 +1057,36 @@
             justify-content: center;
             gap: 30px;
             flex-wrap: wrap;
+            transition: all 0.25s ease;
             @include custom-screen("max-width", $large-screen - 1px) {
                 padding: unset;
             }
+
             @include mobile-screen() {
                 padding: 0 80px;
             }
+
             .card-item {
                 padding: 45px 40px 60px;
                 margin-bottom: 30px;
                 @include mixins.flex-vertical;
                 flex-direction: column;
                 width: width-flex-item(3, 30px);
+                transition: all 0.25s ease;
                 @include custom-screen("max-width", $desktop-screen - 1px) {
                     width: width-flex-item(2, 30px);
                     margin-bottom: unset;
                 }
+
                 @include custom-screen("max-width", $tablet-screen - 1px) {
                     width: width-flex-item(1, 30px);
                     padding: 40px 25px 45px;
                 }
+
                 @include custom-screen("max-width", $mobile-screen - 1px) {
                     width: width-flex-item(1, 30px);
                 }
+
                 background-color: $pricing-card;
                 border: 2px solid $pricing-card;
                 border-radius: 4px;
@@ -1035,10 +1169,13 @@
     .contact-box {
         @include resize-layout();
         display: flex;
-        gap: 30px;
+        column-gap: 30px;
+        row-gap: 60px;
+
         @include custom-screen("max-width", $desktop-screen - 1px) {
             flex-direction: column;
         }
+
         .group-input,
         .contact-info {
             .title-decoration {
@@ -1061,9 +1198,11 @@
                 padding: 40px 34px 60px;
                 background-color: $pricing-card;
                 font-size: 14px;
+
                 @include custom-screen("max-width", $tablet-screen - 1px) {
                     padding: 40px 25px 60px;
                 }
+
                 &-header {
                     padding-bottom: 25px;
                     margin-bottom: 10px;
@@ -1129,13 +1268,16 @@
 
         .service-poster {
             width: width-flex-item(2, 50px);
+
             @include custom-screen("max-width", $desktop-screen - 1px) {
                 width: 100%;
             }
+
             position: relative;
             display: flex;
             gap: 21px;
-            > img {
+
+            >img {
                 width: 100%;
                 object-fit: fill;
             }
@@ -1149,9 +1291,11 @@
                     right: 0px;
                     bottom: 0;
                 }
+
                 @include custom-screen("max-width", $desktop-screen - 1px) {
                     position: relative;
                 }
+
                 @include custom-screen("max-width", $tablet-screen - 1px) {
                     position: absolute;
                     right: 0px;
@@ -1165,9 +1309,11 @@
             flex-direction: column;
             align-self: center;
             width: width-flex-item(2, 50px);
+
             @include custom-screen("max-width", $desktop-screen - 1px) {
                 width: 100%;
             }
+
             padding-left: 20px;
 
             .desc {
@@ -1178,6 +1324,7 @@
 
             .content-meta {
                 padding-right: 110px;
+
                 @include custom-screen("max-width", $large-screen - 1px) {
                     padding-right: unset;
                 }
@@ -1185,9 +1332,11 @@
                 &-item {
                     display: flex;
                     gap: 20px;
+
                     @include custom-screen("max-width", $mobile-screen - 1px) {
                         flex-direction: column;
                     }
+
                     .meta-icon {
                         position: relative;
                         flex: 0 0 95px;
@@ -1353,7 +1502,7 @@
                     $duration: calc($duration-counter/$item-count-up);
                     $delay: $duration * ($i - 1);
 
-                    @if ($i == $item-count-up) {
+                    @if ($i ==$item-count-up) {
                         $last-duration: $duration +0.12;
                         transform: translateY(0);
                         animation: count-up-key $last-duration linear $delay forwards;
@@ -1370,7 +1519,7 @@
                     $duration: calc($duration-counter/$item-count-down);
                     $delay: $duration * ($i - 1);
 
-                    @if ($i == $item-count-down) {
+                    @if ($i ==$item-count-down) {
                         $last-duration: $duration +0.12;
                         transform: translateY(0);
                         animation: count-down-key $last-duration linear $delay forwards;
@@ -1388,6 +1537,7 @@
         @include resize-layout();
         @include mixins.flex-vertical;
         justify-content: space-between;
+
         @include custom-screen("max-width", $desktop-screen - 1px) {
             flex-direction: column;
             row-gap: 50px;
@@ -1407,6 +1557,7 @@
                 flex-wrap: wrap;
                 column-gap: 35px;
                 row-gap: 15px;
+
                 h3 {
                     color: transparent;
                     -webkit-text-stroke: 2px $text-red;
@@ -1487,10 +1638,12 @@
         .image {
             margin-right: -90px;
             flex: 0 0 60%;
+
             @include custom-screen("max-width", $desktop-screen - 1px) {
                 margin-right: unset;
                 flex: unset;
             }
+
             img {
                 display: block;
                 transform: translateX(20%);
