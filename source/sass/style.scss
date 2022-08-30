@@ -39,6 +39,7 @@
             align-self: stretch;
             margin: 0 auto;
             transition: all 0.25s ease;
+
             @include custom-screen("max-width", $desktop-screen - 1px) {
                 display: none;
             }
@@ -51,6 +52,7 @@
                 cursor: pointer;
                 @include mixins.flex-center;
                 transition: all 0.25s ease;
+
                 @include custom-screen("max-width", $large-screen - 1px) {
                     padding: 20px;
                 }
@@ -249,7 +251,7 @@
                 }
             }
 
-            a {
+            a, p {
                 font-size: 15px;
                 color: $text-white;
                 margin-right: auto;
@@ -294,6 +296,10 @@
 
                         .dropdown-item {
                             padding: 10px 25px 10px 45px;
+
+                            &.active a {
+                                color: $accent;
+                            }
 
                             &:not(:last-child) {
                                 border-bottom: 1px solid rgba($color: $text-dark-gray, $alpha: 0.2);
@@ -525,10 +531,11 @@
                 padding-left: unset;
                 margin-bottom: 10px;
 
-                > .sub-title {
+                >.sub-title {
                     font-size: 20px;
                 }
-                > .title {
+
+                >.title {
                     font-size: 50px;
                 }
             }
@@ -538,7 +545,8 @@
             .thumb-image {
                 max-width: 80%;
             }
-            .content > .title {
+
+            .content>.title {
                 font-size: 46px;
             }
         }
@@ -547,7 +555,8 @@
             .thumb-image {
                 max-width: 100%;
             }
-            .content > .title {
+
+            .content>.title {
                 font-size: 36px;
             }
         }
@@ -663,9 +672,15 @@
     .blog-box {
         display: flex;
         gap: 60px;
+        transition: all 0.25s ease;
         @include resize-layout();
 
+        @include custom-screen("max-width", $large-screen - 1px) {
+            column-gap: 30px;
+        }
+
         .blog-box-inner {
+            transition: all 0.25s ease;
             width: width-flex-percent(2, 3, 60px, 2);
 
             .list-blog {
@@ -695,7 +710,16 @@
                         margin: 6px 0 18px;
                         color: $text-white;
                         font-size: 26px;
-                        transition: color 0.25s;
+                        transition: all 0.25s ease;
+
+                        @include custom-screen("max-width", $tablet-screen - 1px) {
+                            font-size: 24px;
+                        }
+
+                        @include custom-screen("max-width", $mobile-screen - 1px) {
+                            font-size: 20px;
+                            margin: 6px 0 15px;
+                        }
                     }
 
                     p.desc {
@@ -706,9 +730,33 @@
                         padding-top: 20px;
                         border-top: 3px solid $psudo;
                         @include mixins.flex-vertical;
-
+                        flex-wrap: wrap;
+                        transition: all 0.25s ease;
+                        row-gap: 10px;
+                        @include custom-screen("max-width", $mobile-screen - 1px) {
+                            justify-content: space-between;
+                        }
                         .meta-blog {
                             font-size: 12px;
+
+                            @include custom-screen("max-width", $mobile-screen - 1px) {
+                                // text-align: center;
+                                min-width: 50%;
+                                flex: 0 0 50%;
+                                &:nth-child(3) {
+                                    text-align: right;
+                                    order: 2;
+                                }
+
+                                &:nth-child(2) {
+                                    order: 1;
+                                }
+
+                                &:nth-child(1) {
+                                    order: 3;
+                                }
+
+                            }
 
                             .fa {
                                 margin-right: 8px;
@@ -723,6 +771,13 @@
                                 margin-left: 17px;
                                 padding-left: 17px;
                                 border-left: 2px solid $text-dark;
+
+                                @include custom-screen("max-width", $mobile-screen - 1px) {
+                                    margin-left: unset;
+                                    padding-left: unset;
+                                    border-left: unset;
+
+                                }
                             }
                         }
 
@@ -731,6 +786,15 @@
                             font-size: 14px;
                             line-height: 21px;
                             text-transform: capitalize;
+                            transition: all 0.25s ease;
+
+                            @include custom-screen("max-width", $mobile-screen - 1px) {
+                                text-align: right;
+                                margin-left: unset;
+                                order: 4;
+                                min-width: 50%;
+                                flex: 0 0 50%;
+                            }
 
                             .fa {
                                 margin-left: 5px;
@@ -743,8 +807,22 @@
         }
 
         .blog-option {
+            transition: all 0.25s ease;
             width: width-flex-percent(1, 3, 60px, 2);
         }
+
+        @include custom-screen("max-width", $desktop-screen - 1px) {
+            flex-direction: column;
+            justify-content: space-between;
+            row-gap: 120px;
+
+            .blog-box-inner,
+            .blog-option {
+                width: 100%;
+            }
+        }
+
+
     }
 }
 
@@ -757,6 +835,10 @@
         gap: 60px;
         @include resize-layout();
 
+        @include custom-screen("max-width", $large-screen - 1px) {
+            column-gap: 30px;
+        }
+
         .blog-box-inner {
             width: width-flex-percent(2, 3, 60px, 2);
 
@@ -766,6 +848,10 @@
                 .blog-content {
                     background-color: $pricing-card;
                     padding: 30px;
+
+                    @include custom-screen("max-width", $tablet-screen - 1px) {
+                        padding: 30px 20px;
+                    }
 
                     >.meta-blog {
                         display: inline-block;
@@ -783,10 +869,18 @@
                         color: $text-white;
                         font-size: 26px;
                         transition: color 0.25s;
+                        @include custom-screen("max-width", $tablet-screen - 1px) {
+                            font-size: 24px;
+                        }
+
+                        @include custom-screen("max-width", $mobile-screen - 1px) {
+                            font-size: 20px;
+                            margin: 6px 0 15px;
+                        }
                     }
 
                     p.desc {
-                        padding-bottom: 15px;
+                        margin-bottom: 15px;
                     }
 
                     blockquote {
@@ -795,11 +889,19 @@
                         margin: 35px 0 40px;
                         background-color: $bg-black;
                         color: $text-white;
+                        transition: all 0.25s ease;
+                        column-gap: 30px;
+                        row-gap: 15px;
+                        @include custom-screen("max-width", $tablet-screen - 1px) {
+                            flex-direction: column;
+                        }
 
                         .icon-quote .fa {
                             font-size: 55px;
-                            margin-right: 30px;
                             line-height: 1;
+                            @include custom-screen("max-width", $tablet-screen - 1px) {
+                                font-size: 40px;
+                            }
                         }
 
                         .quote-centent {
@@ -807,20 +909,42 @@
                                 font-size: 20px;
                                 line-height: 1.6;
                                 margin-bottom: 18px;
+                                transition: all 0.25s ease;
+                                font-style: italic;
+                                @include desktop-screen {
+                                    font-size: 18px;
+                                }
+                                @include custom-screen("max-width", $tablet-screen - 1px) {
+                                    font-size: 16px;
+                                }
                             }
 
-                            .name,
-                            .role {
+                            .name {
                                 font-size: 16px;
+                                transition: all 0.25s ease;
+                                @include custom-screen("max-width", $tablet-screen - 1px) {
+                                    font-size: 13px;
+                                }
+                                @include custom-screen("max-width", $mobile-screen - 1px) {
+                                    display: block;
+                                }
                             }
 
                             .role {
+                                font-size: 14px;
+                                transition: all 0.25s ease;
+                                @include custom-screen("max-width", $tablet-screen - 1px) {
+                                    font-size: 12px;
+                                }
                                 color: $text-dark-gray;
 
                                 &::before {
                                     content: "|";
                                     padding: 0 14px;
                                     color: $text-dark-gray;
+                                    @include custom-screen("max-width", $mobile-screen - 1px) {
+                                        display: none
+                                    }
                                 }
                             }
                         }
@@ -830,6 +954,10 @@
                         @include mixins.flex-vertical;
                         gap: 23px;
                         margin-bottom: 32px;
+                        @include custom-screen("max-width", $mobile-screen - 1px) {
+                            flex-direction: column;
+                            gap: 20px;
+                        }
                     }
 
                     .footer {
@@ -838,7 +966,13 @@
                         border-top: 3px solid $psudo;
                         @include mixins.flex-vertical;
                         justify-content: space-between;
-
+                        transition: all 0.25s ease;
+                        flex-wrap: wrap;
+                        @include custom-screen("max-width", $mobile-screen - 1px) {
+                            flex-direction: column;
+                            row-gap: 16px;
+                            align-items: flex-start;
+                        }
                         .meta-blog {
                             @include mixins.flex-vertical;
                             font-size: 12px;
@@ -897,6 +1031,9 @@
                                 gap: 16px;
                                 padding-right: 35px;
                                 margin: unset;
+                                @include custom-screen("max-width", $large-screen - 1px) {
+                                    padding-right: 10px;
+                                }
                             }
                         }
                     }
@@ -913,6 +1050,17 @@
 
         .blog-option {
             width: width-flex-percent(1, 3, 60px, 2);
+        }
+
+        @include custom-screen("max-width", $desktop-screen - 1px) {
+            flex-direction: column;
+            justify-content: space-between;
+            row-gap: 120px;
+
+            .blog-box-inner,
+            .blog-option {
+                width: 100%;
+            }
         }
     }
 }
@@ -974,6 +1122,7 @@
 
                     .view-counter-box {
                         @include mixins.flex-vertical;
+
                         .view-counter {
                             font-size: 14px;
                             color: $text-white;
@@ -987,6 +1136,7 @@
                 padding: 0 15px;
                 max-width: width-flex-percent(1, 3);
                 transition: all 0.25s ease;
+
                 @include custom-screen("max-width", $desktop-screen - 1px) {
                     align-self: center;
                     max-width: 60%;
@@ -1014,6 +1164,7 @@
             background-color: $bg-black;
             border: 1px solid $psudo;
             transition: all 0.25s ease;
+
             @include custom-screen("max-width", $tablet-screen - 1px) {
                 font-size: 22px;
                 padding: 25px 30px;
@@ -1058,6 +1209,7 @@
             gap: 30px;
             flex-wrap: wrap;
             transition: all 0.25s ease;
+
             @include custom-screen("max-width", $large-screen - 1px) {
                 padding: unset;
             }
@@ -1073,6 +1225,7 @@
                 flex-direction: column;
                 width: width-flex-item(3, 30px);
                 transition: all 0.25s ease;
+
                 @include custom-screen("max-width", $desktop-screen - 1px) {
                     width: width-flex-item(2, 30px);
                     margin-bottom: unset;
@@ -1923,8 +2076,8 @@
         @include mixins.flex-vertical;
         justify-content: space-between;
         flex-wrap: wrap;
-        row-gap: 30px;
-        column-gap: 15px;
+        column-gap: 30px;
+        row-gap: 15px;
 
         @include custom-screen("max-width", $tablet-screen - 1px) {
             justify-content: center;
