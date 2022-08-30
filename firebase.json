@@ -1,0 +1,14 @@
+{
+  "hosting": {
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**",
+      "public/source/sass",
+      "public/source/css/style.css.map",
+      ".gitignore"
+    ],
+    "cleanUrls": true
+  }
+}

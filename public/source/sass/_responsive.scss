@@ -9,13 +9,6 @@ $tablet-screen: 768px;
 $desktop-screen: 992px;
 $large-screen: 1220px;
 
-
-// Desktop: 1920px
-// Ipad pro: 992px
-// Ipad air: 820px
-// Ipad Mini: 768px
-// Iphone 12 Pro: 390px
-
 @mixin small-screen() {
     @media (max-width: #{$mobile-screen - 1px}) {
         @content;
