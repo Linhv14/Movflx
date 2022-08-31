@@ -1725,8 +1725,7 @@ p.desc.dark {
 #navbar-mobile .navbar-body-item.active > a {
   color: #e4d804;
 }
-#navbar-mobile .navbar-body-item a,
-#navbar-mobile .navbar-body-item p {
+#navbar-mobile .navbar-body-item a, #navbar-mobile .navbar-body-item p {
   font-size: 15px;
   color: #fff;
   margin-right: auto;

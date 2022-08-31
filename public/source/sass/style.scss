@@ -251,8 +251,7 @@
                 }
             }
 
-            a,
-            p {
+            a, p {
                 font-size: 15px;
                 color: $text-white;
                 margin-right: auto;
@@ -734,11 +733,9 @@
                         flex-wrap: wrap;
                         transition: all 0.25s ease;
                         row-gap: 10px;
-
                         @include custom-screen("max-width", $mobile-screen - 1px) {
                             justify-content: space-between;
                         }
-
                         .meta-blog {
                             font-size: 12px;
 
@@ -746,7 +743,6 @@
                                 // text-align: center;
                                 min-width: 50%;
                                 flex: 0 0 50%;
-
                                 &:nth-child(3) {
                                     text-align: right;
                                     order: 2;
@@ -873,7 +869,6 @@
                         color: $text-white;
                         font-size: 26px;
                         transition: color 0.25s;
-
                         @include custom-screen("max-width", $tablet-screen - 1px) {
                             font-size: 24px;
                         }
@@ -905,7 +900,6 @@
                         .icon-quote .fa {
                             font-size: 55px;
                             line-height: 1;
-
                             @include custom-screen("max-width", $tablet-screen - 1px) {
                                 font-size: 40px;
                             }
@@ -935,7 +929,6 @@
                                 @include custom-screen("max-width", $tablet-screen - 1px) {
                                     font-size: 13px;
                                 }
-
                                 @include custom-screen("max-width", $mobile-screen - 1px) {
                                     display: block;
                                 }
@@ -944,18 +937,15 @@
                             .role {
                                 font-size: 14px;
                                 transition: all 0.25s ease;
-
+                                color: $text-dark-gray;
                                 @include custom-screen("max-width", $tablet-screen - 1px) {
                                     font-size: 12px;
                                 }
-
-                                color: $text-dark-gray;
 
                                 &::before {
                                     content: "|";
                                     padding: 0 14px;
                                     color: $text-dark-gray;
-
                                     @include custom-screen("max-width", $mobile-screen - 1px) {
                                         display: none
                                     }
@@ -968,7 +958,6 @@
                         @include mixins.flex-vertical;
                         gap: 23px;
                         margin-bottom: 32px;
-
                         @include custom-screen("max-width", $mobile-screen - 1px) {
                             flex-direction: column;
                             gap: 20px;
@@ -983,13 +972,11 @@
                         justify-content: space-between;
                         transition: all 0.25s ease;
                         flex-wrap: wrap;
-
                         @include custom-screen("max-width", $mobile-screen - 1px) {
                             flex-direction: column;
                             row-gap: 16px;
                             align-items: flex-start;
                         }
-
                         .meta-blog {
                             @include mixins.flex-vertical;
                             font-size: 12px;
@@ -1048,7 +1035,6 @@
                                 gap: 16px;
                                 padding-right: 35px;
                                 margin: unset;
-
                                 @include custom-screen("max-width", $large-screen - 1px) {
                                     padding-right: 10px;
                                 }

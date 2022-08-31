@@ -1,26 +1,21 @@
 {
-  "name": "movflx-v1.2",
+  "dependencies": {
+    "sass": "^1.54.4"
+  },
+  "name": "movflx",
   "version": "1.0.0",
-  "description": "Build Movie Website using HTML SASS JS",
+  "description": "Final project about HTML SASS JS",
   "main": "index.js",
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "sass public/source/sass/style.scss public/source/css/style.css --watch"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Linhv14/Movflx.git"
-  },
   "keywords": [
-    "Front-end",
     "HTML",
-    "JS",
+    "CSS",
     "SCSS"
   ],
   "author": "Linhv14",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Linhv14/Movflx/issues"
-  },
-  "homepage": "https://github.com/Linhv14/Movflx#readme"
+  "license": "ISC"
 }

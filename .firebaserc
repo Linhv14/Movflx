@@ -1,5 +1,9 @@
 {
   "projects": {
+<<<<<<< HEAD
     "default": "movflx-onlines"
+=======
+    "default": "movflx-clone"
+>>>>>>> fd89765f0bef86d443c961bb4ec6dd88acf25d15
   }
 }
