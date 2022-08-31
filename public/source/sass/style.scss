@@ -1691,6 +1691,7 @@
     }
 
     .live-movie-box {
+        overflow-x: hidden;
         @include resize-layout();
         @include mixins.flex-vertical;
         justify-content: space-between;

@@ -3342,6 +3342,7 @@ p.desc.dark {
   animation: count-down-key 0.27s linear 1.35s forwards;
 }
 #live-movie .live-movie-box {
+  overflow-x: hidden;
   display: flex;
   align-items: center;
   justify-content: space-between;
