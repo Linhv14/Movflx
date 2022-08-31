@@ -1,0 +1,92 @@
+
+@use "mixins";
+@import "variables.scss";
+
+// Responsive
+$small-screen: 390px;
+$mobile-screen: 576px;
+$tablet-screen: 768px;
+$desktop-screen: 992px;
+$large-screen: 1220px;
+
+@mixin small-screen() {
+    @media (max-width: #{$mobile-screen - 1px}) {
+        @content;
+    }
+}
+
+@mixin mobile-screen() {
+    @media (min-width: #{$mobile-screen}) and (max-width: #{$tablet-screen - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet-screen() {
+    @media (min-width: #{$tablet-screen}) and (max-width: #{$desktop-screen - 1px}) {
+        @content;
+    }
+}
+
+@mixin desktop-screen() {
+    @media (min-width: #{$desktop-screen}) and (max-width: #{$large-screen - 1px}) {
+        @content;
+    }
+}
+
+@mixin large-screen() {
+    @media (min-width: #{$large-screen}) {
+        @content;
+    }
+}
+
+@mixin custom-screen($width, $value) {
+    @media (#{$width}: #{$value}) {
+        @content;
+    }
+}
+
+@mixin resize-layout($padding: 15px) {
+    @include small-screen() {
+        @include mixins.set-layout(100%, $padding);
+    };
+    @include mobile-screen() {
+        @include mixins.set-layout(540px, $padding);
+    };
+    @include tablet-screen() {
+        @include mixins.set-layout(720px, $padding);
+    };
+    @include desktop-screen() {
+        @include mixins.set-layout(960px, $padding);
+    };
+    @include large-screen() {
+        @include mixins.set-layout(1330px, $padding);
+    };
+}
+
+@mixin resize-grid($width) {
+    @include small-screen() {
+        #{$width}: width-flex-item(1, 30px)
+    };
+    @include mobile-screen() {
+        #{$width}: width-flex-item(2, 30px)
+    };
+    @include tablet-screen() {
+        #{$width}: width-flex-item(2, 30px)
+    };
+    @include desktop-screen() {
+        #{$width}: width-flex-item(3, 30px)
+    };
+    @include large-screen() {
+        #{$width}: width-flex-item(4, 30px)    
+    };
+}
+
+@function width-flex-item($col, $gap) {
+    $result: calc(100%/$col - (($col - 1)*$gap)/$col);
+    @return $result;
+}
+
+@function width-flex-percent($col, $total, $gap: 0px, $total-col: 1) {
+    $result: calc(100%*$col/$total - $gap/$total-col);
+    @return $result;
+}

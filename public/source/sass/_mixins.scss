@@ -1,0 +1,76 @@
+@import "variables.scss";
+@import "animation.scss";
+
+@mixin flex-vertical {
+    display: flex;
+    align-items: center;
+}
+
+@mixin flex-horizonal {
+    display: flex;
+    justify-content: center;
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin reset-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+@mixin abs-horizonal($direction, $value: 0) {
+    position: absolute;
+    top: 50%;
+    #{$direction}: $value;
+    transform: translateY(-50%);
+}
+
+@mixin abs-vertical($direction, $value: 0) {
+    position: absolute;
+    left: 50%;
+    #{$direction}: $value;
+    transform: translateX(-50%);
+}
+
+@mixin abs-fullsize {
+    position: absolute;
+    inset: 0;
+}
+
+@mixin abs-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin bg($url) {
+    background: {
+        image: url($url);
+        position: center;
+        repeat: no-repeat;
+        size: cover;
+    }
+
+    position: relative;
+}
+
+@mixin webkit($attribute, $value) {
+    -moz-#{$attribute}: $value;
+    /* Firefox */
+    -webkit-#{$attribute}: $value;
+    /* Safari and Chrome */
+    #{$attribute}: $value;
+}
+
+@mixin set-layout($width, $padding: 15px) {
+    width: $width;
+    margin: 0 auto;
+    padding: 0 $padding;
+}

@@ -1,0 +1,62 @@
+
+@keyframes scaleDown {
+    from {
+        transform-origin: top;
+        transform: translateY(-20px) rotateX(-60deg);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0) rotateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeToLeft {
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes count-up {
+    to {
+        transform: translateY(-100%);
+    }
+}
+
+@keyframes count-up-key {
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes count-down {
+    to {
+        transform: translateY(100%);
+    }
+}
+
+@keyframes count-down-key {
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes navbar-fade-down {
+    to {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

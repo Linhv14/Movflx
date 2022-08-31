@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+    <nav id="navbar" class="navbar-top">
+        <div class="navbar-inner">
+            <div class="navbar-logo image">
+                <a href="index.html">
+                    <img src="./assets/images/logo.png" alt="Movflx">
+                </a>
+            </div>
+            <ul class="navbar-box">
+                <li class="navbar-item parent" data-active="home">
+                    <a href="index.html">Home</a>
+                    <ul class="dropdown">
+                        <li class="dropdown-item"><a href="index.html">Home one</a></li>
+                        <li class="dropdown-item"><a href="#">Home two</a></li>
+                    </ul>
+                </li>
+                <li class="navbar-item parent" data-active="movie">
+                    <a href="movie.html">Movie</a>
+                    <ul class="dropdown">
+                        <li class="dropdown-item"><a href="movie.html">Movie</a></li>
+                        <li class="dropdown-item"><a href="movie-detail.html">Movie details</a></li>
+                    </ul>
+                </li>
+                <li class="navbar-item" data-active="tv-show"><a href="tv-show.html">TV show</a></li>
+                <li class="navbar-item" data-active="pricing"><a href="pricing.html">Pricing</a></li>
+                <li class="navbar-item parent" data-active="blog">
+                    <a href="blog.html">Blog</a>
+                    <ul class="dropdown">
+                        <li class="dropdown-item active"><a href="blog.html">Our blog</a></li>
+                        <li class="dropdown-item"><a href="blog-detail.html">Blog details</a></li>
+                    </ul>
+                </li>
+                <li class="navbar-item" data-active="contacts"><a href="contact.html">Contacts</a></li>
+            </ul>
+            <div class="navbar-action">
+                <div class="search-btn">
+                    <a href="#"><i class="fa fa-search"></i></a>
+                </div>
+                <div class="language-btn">
+                    <a href="#"><i class="fa fa-globe"></i></a>
+                    <select name="language" id="language" title="Select language">
+                        <option value="en" selected>en</option>
+                        <option value="au">au</option>
+                        <option value="ar">ar</option>
+                        <option value="tu">tu</option>
+                    </select>
+                </div>
+                <a href="#" class="btn rounded outline bg-dark medium fw-7 space signin-btn">
+                    Sign In
+                </a>
+            </div>
+            <div class="navbar-menu">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <aside id="navbar-mobile">
+        <div class="navbar-header">
+            <a href="../index.html" class="logo">
+                <img src="../assets/images/logo.png" alt="Movflx">
+            </a>
+            <div class="close-btn"><i class="fa fa-times"></i></div>
+        </div>
+        <ul class="navbar-body">
+            <li class="navbar-body-item parent" data-active="home">
+                <a class="fw-5" href="../index.html">Home</a>
+                <div class="dropdown-btn"><i class="fa fa-angle-down"></i></div>
+            </li>
+            <li class="navbar-body-item dropdown">
+                <ul class="dropdown-box">
+                    <li class="dropdown-item mobile" data-active-child="home home-one"><a class="fw-5" href="../index.html">Home
+                            One</a></li>
+                    <li class="dropdown-item mobile" data-active-child="home home-two"><a class="fw-5" href="#">Home Two</a></li>
+                </ul>
+            </li>
+            <li class="navbar-body-item parent" data-active="movie">
+                <a class="fw-5" href="../movie.html">Movie</a>
+                <div class="dropdown-btn"><i class="fa fa-angle-down"></i></div>
+            </li>
+            <li class="navbar-body-item dropdown">
+                <ul class="dropdown-box">
+                    <li class="dropdown-item mobile" data-active-child="movie movie"><a class="fw-5" href="../movie.html">Movie</a></li>
+                    <li class="dropdown-item mobile" data-active-child="movie movie-detail"><a class="fw-5" href="../movie-detail.html">Movie Details</a></li>
+                </ul>
+            </li>
+            <li class="navbar-body-item" data-active="tv-show">
+                <a class="fw-5" href="../tv-show.html">Tv Show</a>
+            </li>
+            <li class="navbar-body-item" data-active="pricing">
+                <a class="fw-5" href="../pricing.html">Pricing</a>
+            </li>
+            <li class="navbar-body-item parent" data-active="blog">
+                <a class="fw-5" href="../blog.html">Blog</a>
+                <div class="dropdown-btn"><i class="fa fa-angle-down"></i></div>
+            </li>
+            <li class="navbar-body-item dropdown">
+                <ul class="dropdown-box">
+                    <li class="dropdown-item mobile" data-active-child="blog blog"><a class="fw-5" href="../blog.html">Our Blog</a></li>
+                    <li class="dropdown-item mobile" data-active-child="blog blog-detail"><a class="fw-5" href="../blog-detail.html">Blog Details</a></li>
+                </ul>
+            </li>
+            <li class="navbar-body-item" data-active="contact">
+                <a class="fw-5" href="../contact.html">Contacts</a>
+            </li>
+            <li class="navbar-body-item parent" data-active="account">
+                <a class="fw-5" href="#">Account</a>
+                <div class="dropdown-btn"><i class="fa fa-angle-down"></i></div>
+            </li>
+            <li class="navbar-body-item dropdown">
+                <ul class="dropdown-box">
+                    <li class="dropdown-item"><a class="fw-5" href="#">Sign in</a></li>
+                    <li class="dropdown-item"><a class="fw-5" href="#">Register</a></li>
+                </ul>
+            </li>
+            <li class="navbar-body-item parent">
+                <p class="fw-5">More</p>
+                <div class="dropdown-btn"><i class="fa fa-angle-down"></i></div>
+            </li>
+            <li class="navbar-body-item dropdown">
+                <ul class="dropdown-box">
+                    <li class="dropdown-item"><a class="fw-5" href="#">Search movie</a></li>
+                    <li class="dropdown-item"><a class="fw-5" href="#">Change language</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="navbar-footer">
+            <li class="navbar-footer-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li class="navbar-footer-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li class="navbar-footer-item"><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
+            <li class="navbar-footer-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
+            <li class="navbar-footer-item"><a href="#"><i class="fa fa-youtube-play"></i></a></li>
+        </ul>
+    </aside>
+
+    <div class="overlay"></div>
+</body>
+
+</html>

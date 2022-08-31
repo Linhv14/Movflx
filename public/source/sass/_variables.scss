@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+$width-section: 1330px;
+$width-section-large: 1420px;
+
+// Animation in Live-Movie Section
+$item-count-up: 3; // Số phần tử của animation đếm lên
+$item-count-down: 10; // Số phần tử của animation đếm xuống
+$duration-counter: 1.5s; // Thời gian diễn ra của 2 animation
+// --- End
+
+$movie-col: 4;
+$movie-gap: 30px;
+
+$accent: #e4d804;
+
+$text-white: #fff;
+$text-black: #1e1b29;
+$text-dark: #656363;
+$text-dark-gray: #6a6a6a;
+$text-light: #cdcaca;
+$text-light-gray: #bcbcbc;
+$text-red: #d81c2b;
+$text-search: #555;
+
+$bg-black: #000;
+$pricing-card: #1f1e24;
+$icon-black: #14141d;
+$bg-dark: #171d22;
+$bg-gray: #20212b;
+$bg-black-btn: #0b1110;
+$bg-dropdown: #1b252e;
+$bg-search: rgba(23,26,33,.95);
+$bg-search-gray: #393939;
+$bg-prime: #242c38;
+
+$selection: #444;
+
+$psudo :#292b37;
+
+$border-footer: 2px solid #494955;
+$border-price: 1px solid #414146;
+$border-dropdown: 1px solid #283846;
+$border-btn: 2px solid #2d303d;
+$border-dashed: 1px dashed #38373c;
+$box-shadow: 0px 3px 0px 0px rgb(143 143 143 / 14%);
+$text-shadow: 0px 3px 4px rgb(30 30 30 / 18%);
+$input-shadow: 0px 3px 4px 0px rgb(30 30 30 / 17%);
+$price-shadow: inset 0px 3px 7px 0px rgb(0 0 0 / 31%);
+$float-btn-shadow: 0px 0px 4px 0px rgb(30 30 30 / 17%);
+
+$icon-facebook: #385594;
+$icon-twitter: #4eabee;
+$icon-pinterest: #cb2027;
